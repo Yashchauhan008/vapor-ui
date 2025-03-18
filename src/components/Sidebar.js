@@ -37,8 +37,8 @@ const Sidebar = () => {
                   onClick={() => handleNavigation(categoryItem.name, subcat)} // Use the standardized function
                 >
                   {subcat}
-                  {isNew && <span className="new"> New</span>}
-                  {isUpdated && <span className="updated"> Updated</span>}
+                  {isNew && <span className="new">New</span>}
+                  {isUpdated && <span className="updated">Updated</span>}
                 </h4>
               );
             })}

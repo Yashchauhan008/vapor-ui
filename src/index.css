@@ -1,3 +1,15 @@
+@font-face{
+  font-family: 'CoffeeHealing';
+  src: url('./assets/fonts/CoffeeHealing-1GrKe.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'CoffeeHealingItalic';
+  src: url('./assets/fonts/CoffeeHealingItalic-RpP6o.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'Geologica';
+  src: url('./assets/fonts/Geologica-SemiBold-BF648bc32959b11.ttf') format('truetype');
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,7 +28,10 @@ code {
 .header{
   background-color: black;
   width: 100%;
-  height: 80px;
+  height: 70px;
+  border-bottom: 1px solid transparent; /* Set border to transparent first */
+  /* border-image: linear-gradient(to right, black, rgba(255, 255, 255, 0.18), black) 1; */
+  border-image: linear-gradient(to right, black 15%, rgba(255, 255, 255, 0.334) 60%, black 100%) 1;
 }
 .category-container{
   background-color: black;
@@ -35,30 +50,60 @@ code {
   background-color: black;
   width: 300px;
   overflow-y: auto;
-  padding: 10px 20px;
+  padding: 10px 30px;
   padding-bottom: 100px;
   color: white;
+  font-family: Geologica;
 }
 .sidebar::-webkit-scrollbar{
   display: none;
 }
+.new{
+  background-color: #0F2B31;
+  border: 1px solid #00D9FF;
+  padding: 2px 3px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #00D9FF;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+.updated{
+  background-color: #11310f;
+  border: 1px solid #4dff00;
+  padding: 2px 3px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #4dff00;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+}
 .sub-category{
   /* background-color: #fff; */
-  border-left: 2px solid rgb(50, 80, 83);
+  border-left: 2px solid rgba(50, 80, 83, 0.565);
 }
 .sub-category h4{
   /* line-height: 0px; */
   /* background-color: pink; */
   padding: 0;
   margin: 0;
+  padding: 5px 0;
   padding-left: 10px;
+  color: #8e8e8e;
   font-weight: 400;
   transition: 0.5s;
+  font-family: sans-serif;
+  cursor: pointer;
 }
 .sub-category h4.active{
-  border-left: 2px solid rgb(38, 182, 195);
+  border-left: 2px solid rgb(0, 234, 255);
   transform: translateX(-2px);
   transition: 0.5s;
+  color: #fff;
+  font-weight: 500;
 }
 
 .display{
