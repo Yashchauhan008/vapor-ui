@@ -1,48 +1,48 @@
 // Highlighted sidebar items
-export const NEW = ['sub category 4.2','sub category 1.3'];
-export const UPDATED = ['sub category 1.1','sub category 3.3'];
+export const NEW = ["Sub Category 4.2", "Sub Category 1.3"];
+export const UPDATED = ["Sub Category 1.1", "Sub Category 3.3"];
 
 // Used for main sidebar navigation
 export const CATEGORIES = [
   {
-    name: 'category 1',
+    name: "Category 1",
     subcategories: [
-      'sub category 1.1',
-      'sub category 1.2',
-      'sub category 1.3',
-      'sub category 1.4',
-      'sub category 1.5',
-      'sub category 1.6',
-    ]
-  },
-  {
-    name: 'category 2',
-    subcategories: [
-        'sub category 2.1',
-        'sub category 2.2',
-        'sub category 2.3',
-        'sub category 2.4'
-    ]
-  },
-  {
-    name: 'category 3',
-    subcategories: [
-        'sub category 3.1',
-        'sub category 3.2',
-        'sub category 3.3',
-        'sub category 3.4'
+      "Sub Category 1.1",
+      "Sub Category 1.2",
+      "Sub Category 1.3",
+      "Sub Category 1.4",
+      "Sub Category 1.5",
+      "Sub Category 1.6",
     ],
   },
   {
-    name: 'category 4',
+    name: "Category 2",
     subcategories: [
-        'sub category 4.1',
-        'sub category 4.2',
-        'sub category 4.3',
-        'sub category 4.4',
-        'sub category 4.5',
-        'sub category 4.6',
-        'sub category 4.7'
+      "Sub Category 2.1",
+      "Sub Category 2.2",
+      "Sub Category 2.3",
+      "Sub Category 2.4",
     ],
-  }
+  },
+  {
+    name: "Category 3",
+    subcategories: [
+      "Sub Category 3.1",
+      "Sub Category 3.2",
+      "Sub Category 3.3",
+      "Sub Category 3.4",
+    ],
+  },
+  {
+    name: "Category 4",
+    subcategories: [
+      "Sub Category 4.1",
+      "Sub Category 4.2",
+      "Sub Category 4.3",
+      "Sub Category 4.4",
+      "Sub Category 4.5",
+      "Sub Category 4.6",
+      "Sub Category 4.7",
+    ],
+  },
 ];
