@@ -1,9 +1,11 @@
-import React from 'react'
-import { CATEGORIES, NEW, UPDATED } from '../assets/categorylist'
+import React, { useEffect } from 'react'
+import { CATEGORIES, NEW, UPDATED } from '../assets/categorylist.test'
 import useCategory from '../utils/useCategory';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+
+    useEffect(()=>{console.log("sidebar loaded")},)
 
     const navigation = useNavigate();
 
@@ -11,8 +13,10 @@ const Sidebar = () => {
     
     // Standardized navigation function
     const handleNavigation = (categoryItem, subcat) => {
+        console.log(category,"test",subcat)
         const formattedCategory = categoryItem.replace(/\s+/g, "-").toLowerCase();
         const formattedSubcategory = subcat.replace(/\s+/g, "-").toLowerCase();
+        console.log(formattedCategory,"test",formattedSubcategory)
         navigation(`/${formattedCategory}/${formattedSubcategory}`);
       };
       
@@ -28,7 +32,7 @@ const Sidebar = () => {
               const isNew = NEW.includes(subcat);
               const isUpdated = UPDATED.includes(subcat);
               // Determine if the current subcategory is active
-              const isActive = subcat === subcategory;
+              const isActive = subcat.toLowerCase() == subcategory.toLowerCase();
 
               return (
                 <h4 

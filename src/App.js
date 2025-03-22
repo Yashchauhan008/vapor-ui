@@ -3,7 +3,8 @@ import './App.css';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
 import ShowcasePage from './pages/ShowcasePage';
-import CategoryPage from './pages/CategoryPage';
+import Layout from './Layout';
+import Display from './components/Display';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/showcase' element={<ShowcasePage/>}/>
-          <Route path='/:category/:subcategory' element={<CategoryPage/>}/>
+          <Route path='/:category/:subcategory' element={<Layout/>}>
+            <Route index element={<Display/>}/>
+          </Route>
         </Routes>
       </Router>
     </>

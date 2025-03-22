@@ -1,3 +1,6 @@
+//warning:::::::::::::
+//no special charactors are acceptable in category name accepts "."
+
 // Highlighted sidebar items
 export const NEW = ["Sub Category 4.2", "Sub Category 1.3"];
 export const UPDATED = ["Sub Category 1.1", "Sub Category 3.3"];

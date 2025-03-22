@@ -1,19 +1,34 @@
-@font-face{
-  font-family: 'CoffeeHealing';
-  src: url('./assets/fonts/CoffeeHealing-1GrKe.ttf') format('truetype');
+@font-face {
+  font-family: "CoffeeHealing";
+  src: url("./assets/fonts/CoffeeHealing-1GrKe.ttf") format("truetype");
 }
-@font-face{
-  font-family: 'CoffeeHealingItalic';
-  src: url('./assets/fonts/CoffeeHealingItalic-RpP6o.ttf') format('truetype');
+@font-face {
+  font-family: "CoffeeHealingItalic";
+  src: url("./assets/fonts/CoffeeHealingItalic-RpP6o.ttf") format("truetype");
 }
-@font-face{
-  font-family: 'Geologica';
-  src: url('./assets/fonts/Geologica-SemiBold-BF648bc32959b11.ttf') format('truetype');
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/Geologica-SemiBold-BF648bc32959b11.ttf")
+    format("truetype");
 }
+@font-face {
+  font-family: "Cochin";
+  src: url("./assets/fonts/Cochin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Rubic";
+  src: url("./assets/fonts/Rubik-Medium.ttf") format("truetype");
+}
+/* @font-face {
+  font-family: "Gilroy";
+  src: url("./assets/fonts/Gilroy-Regular.ttf") format("truetype");
+} */
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,18 +37,24 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.header{
+.header {
   background-color: black;
   width: 100%;
   height: 70px;
   border-bottom: 1px solid transparent; /* Set border to transparent first */
   /* border-image: linear-gradient(to right, black, rgba(255, 255, 255, 0.18), black) 1; */
-  border-image: linear-gradient(to right, black 15%, rgba(255, 255, 255, 0.334) 60%, black 100%) 1;
+  border-image: linear-gradient(
+      to right,
+      black 15%,
+      rgba(255, 255, 255, 0.334) 60%,
+      black 100%
+    )
+    1;
 }
-.category-container{
+.category-container {
   background-color: black;
   height: 100%;
   display: flex;
@@ -45,31 +66,31 @@ code {
   overflow: hidden;
 }
 
-
-.sidebar{
+.sidebar {
   background-color: black;
-  width: 300px;
+  width: 250px;
   overflow-y: auto;
   padding: 10px 30px;
   padding-bottom: 100px;
+  padding-top: 50px;
   color: white;
   font-family: Geologica;
 }
-.sidebar::-webkit-scrollbar{
+.sidebar::-webkit-scrollbar {
   display: none;
 }
-.new{
-  background-color: #0F2B31;
-  border: 1px solid #00D9FF;
+.new {
+  background-color: #0f2b31;
+  border: 1px solid #00d9ff;
   padding: 2px 3px;
   border-radius: 5px;
   margin-left: 10px;
-  color: #00D9FF;
+  color: #00d9ff;
   font-family: sans-serif;
   font-size: 12px;
   font-weight: 500;
 }
-.updated{
+.updated {
   background-color: #11310f;
   border: 1px solid #4dff00;
   padding: 2px 3px;
@@ -79,34 +100,135 @@ code {
   font-family: sans-serif;
   font-size: 12px;
   font-weight: 500;
-
 }
-.sub-category{
+.sub-category {
   /* background-color: #fff; */
-  border-left: 2px solid rgba(50, 80, 83, 0.565);
+  border-left: 1px solid rgba(50, 80, 83, 0.565);
 }
-.sub-category h4{
-  /* line-height: 0px; */
-  /* background-color: pink; */
+.sub-category h4 {
   padding: 0;
   margin: 0;
-  padding: 5px 0;
-  padding-left: 10px;
+  padding: 8px 0;
+  padding-left: 13px;
   color: #8e8e8e;
   font-weight: 400;
+  border-left: 1px solid rgba(50, 80, 83, 0.565);
   transition: 0.5s;
   font-family: sans-serif;
   cursor: pointer;
+  font-size: 15px;
 }
-.sub-category h4.active{
+.sub-category h4.active {
+  /* line-height: 10px; */
   border-left: 2px solid rgb(0, 234, 255);
-  transform: translateX(-2px);
+  transform: translateX(-1px);
   transition: 0.5s;
   color: #fff;
   font-weight: 500;
 }
 
-.display{
-background-color: black;
-width: 100%;
+.display {
+  /* border: 2px solid red; */
+  background-color: rgba(0, 0, 0, 0.272);
+  width: 100%;
+  padding-top: 60px;
+  /* overflow: hidden; */
+  padding-left: 50px;
+  overflow-x:hidden ;
+  margin-bottom: 100px;
+}
+.display::-webkit-scrollbar{
+  display: none;
+}
+.display h2{
+  font-size: 20px;
+  font-family: "Rubic";
+  text-transform: capitalize;
+  font-weight: 100;
+  line-height: 15px;
+  padding-left: 5px;
+}
+.display h3{
+  font-size: 75px;
+  font-family: "Rubic";
+  text-transform: capitalize;
+  font-weight: 100;
+  line-height: 15px;
+  margin-top: 40px;
+}
+.preview-btn-list{
+  /* background-color: green; */
+  display: flex;
+  gap: 10px;
+}
+
+.content-box{
+  margin-top: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.383); */
+  overflow: hidden;
+}
+
+
+/* ------------------- content-box ------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- btn1 ------------------- */
+
+/* From Uiverse.io by iZOXVL */ 
+.btn1 {
+  padding: 10px 20px;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.btn1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.btn1:hover::after {
+  transform: scale(4);
+}
+
+.btn1:hover {
+  border-color: #666666;
+  background: #292929;
+}
+.btn1 img{
+  height: 20px;
+  width: 20px;
 }
