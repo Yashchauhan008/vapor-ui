@@ -1,108 +1,51 @@
+//warning:::::::::::::
+//no special charactors are acceptable in category name accepts "."
+
 // Highlighted sidebar items
-export const NEW = ['Dither', 'Animated List', 'Gooey Nav', 'Threads', 'Lightning', 'Folder'];
-export const UPDATED = [];
+export const NEW = ["Sub Category 4.2", "Sub Category 1.3"];
+export const UPDATED = ["Sub Category 1.1", "Sub Category 3.3"];
 
 // Used for main sidebar navigation
 export const CATEGORIES = [
   {
-    name: 'Marqeee Animations',
+    name: "Category 1",
     subcategories: [
-      'Marqeee'
-    ]
-  },
-  {
-    name: 'Text Animations',
-    subcategories: [
-      'Split Text',
-      'Blur Text',
-      'Circular Text',
-      'Shiny Text',
-      'Text Pressure',
-      'Fuzzy Text',
-      'Gradient Text',
-      'Falling Text',
-      'Decrypted Text',
-      'True Focus',
-      'Scroll Float',
-      'Scroll Reveal',
-      'ASCII Text',
-      'Rotating Text',
-      'Glitch Text',
-      'Scroll Velocity',
-      'Variable Proximity',
-      'Count Up'
-    ]
-  },
-  {
-    name: 'Animations',
-    subcategories: [
-      'Animated Content',
-      'Fade Content',
-      'Pixel Transition',
-      'Magnet Lines',
-      'Click Spark',
-      'Magnet',
-      'Pixel Trail',
-      'Metallic Paint',
-      'Noise',
-      'Crosshair',
-      'Image Trail',
-      'Ribbons',
-      'Splash Cursor',
-      'Meta Balls',
-      'Follow Cursor',
-      'Blob Cursor',
-      'Star Border'
-    ]
-  },
-  {
-    name: 'Components',
-    subcategories: [
-      'Animated List',
-      'Stack',
-      'Tilted Card',
-      'Folder',
-      'Lanyard',
-      'Dock',
-      'Gooey Nav',
-      'Masonry',
-      'Pixel Card',
-      'Circular Gallery',
-      'Carousel',
-      'Spotlight Card',
-      'Flying Posters',
-      'Infinite Scroll',
-      'Glass Icons',
-      'Decay Card',
-      'Flowing Menu',
-      'Elastic Slider',
-      'Counter',
-      'Infinite Menu',
-      'Rolling Gallery',
-      'Stepper',
-      'Bounce Cards'
+      "Sub Category 1.1",
+      "Sub Category 1.2",
+      "Sub Category 1.3",
+      "Sub Category 1.4",
+      "Sub Category 1.5",
+      "Sub Category 1.6",
     ],
   },
   {
-    name: 'Backgrounds',
+    name: "Category 2",
     subcategories: [
-      'Aurora',
-      'Lightning',
-      'Balatro',
-      'Dither',
-      'Shape Blur',
-      'Threads',
-      'Hyperspeed',
-      'Iridescence',
-      'Grid Distortion',
-      'Ballpit',
-      'Orb',
-      'Grid Motion',
-      'Liquid Chrome',
-      'Squares',
-      'Letter Glitch',
-      'Particles',
-      'Waves'
+      "Sub Category 2.1",
+      "Sub Category 2.2",
+      "Sub Category 2.3",
+      "Sub Category 2.4",
     ],
-  }
+  },
+  {
+    name: "Category 3",
+    subcategories: [
+      "Sub Category 3.1",
+      "Sub Category 3.2",
+      "Sub Category 3.3",
+      "Sub Category 3.4",
+    ],
+  },
+  {
+    name: "Category 4",
+    subcategories: [
+      "Sub Category 4.1",
+      "Sub Category 4.2",
+      "Sub Category 4.3",
+      "Sub Category 4.4",
+      "Sub Category 4.5",
+      "Sub Category 4.6",
+      "Sub Category 4.7",
+    ],
+  },
 ];

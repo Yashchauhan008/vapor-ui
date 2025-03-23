@@ -1,23 +1,23 @@
-const animations = {
-    'animated-content': () => import("../demo/Animations/AnimatedContentDemo"),
+const Testimonials = {
+    'testimonial-carousel': () => import("../Demo/TestimonialCarouselDemo"),
   };
   
-  const textAnimations = {
-    'split-text': () => import("../demo/TextAnimations/SplitTextDemo"),
-  };
+//   const blueElements = {
+//     'blue': () => import("../Demo/BlueDemo"),
+//   };
   
-  const components = {
-    'animated-list': () => import("../demo/Components/AnimatedListDemo"),
-  };
+//   const components = {
+//     'animated-list': () => import("../Demo/AnimatedListDemo"),
+//   };
   
-  const marquee = {
-    'aurora': () => import("../demo/Backgrounds/AuroraDemo"),
-  };
+//   const marquee = {
+//     'aurora': () => import("../demo/Backgrounds/AuroraDemo"),
+//   };
   
   export const componentMap = {
-    ...animations,
-    ...textAnimations,
-    ...components,
-    ...marquee,
+    ...Testimonials,
+    // ...blueElements,
+    // ...components,
+    // ...marquee,
   };
   

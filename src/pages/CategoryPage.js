@@ -1,30 +1,50 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, Suspense, lazy, useState, React } from 'react';
 import { useParams } from "react-router-dom";
-import PreviewTab from "./PreviewTab";  
-import CodeTab from "./CodeTab";
-import ContributionTab from "./ContributionTab";
+import CodeTab from "../components/CodeTab";
+import ContributionTab from "../components/ContributionTab";
 // import AnimatedContentDemo from "../Demo/AnimatedContentDemo"
-import Marquee from "../constants/Codes/Marquee";
+import { componentMap } from "../constants/Components";
 
-const Display = () => {
+const CategoryPage = () => {
   const { category, subcategory } = useParams();
 
   const [content, setContent] = useState("Preview");
   const [demoName, setDemoName] = useState("");
+  const [DynamicComponent, setDynamicComponent] = useState(null);
 
   useEffect(() => {
     setDemoName(convertToPascalCaseWithDemo(subcategory));
+    
+    // Reset and load the new component when subcategory changes
+    if (subcategory && componentMap[subcategory]) {
+      const loadComponent = async () => {
+        try {
+          // Dynamically import the component based on current subcategory
+          const Component = lazy(componentMap[subcategory]);
+          setDynamicComponent(() => Component);
+        } catch (error) {
+          console.error("Error loading component:", error);
+          setDynamicComponent(null);
+        }
+      };
+      
+      loadComponent();
+    } else {
+      setDynamicComponent(null);
+    }
   }, [subcategory]);
 
   function convertToPascalCaseWithDemo(str) {
-   return `<${str.split('-') // Split by hyphen
+    if (!str) return "";
+    return `<${str.split('-') // Split by hyphen
         .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
         .join('') + 'Demo'}/>`; // Join and append 'Demo'
-}
+  }
+
 
 
   return (
-    <div className="display">
+    <div className="category-page">
       <h2>{category.replace("-", " ")}</h2>
       <h3>{subcategory.replace("-", " ")}</h3>
       <div className="preview-btn-list">
@@ -102,7 +122,15 @@ const Display = () => {
       </div>
       <div className="content-box">
         {content === "Preview" && (
-          demoName && <demoName/>
+          <>
+            {DynamicComponent ? (
+              <Suspense fallback={<div>Loading component...</div>}>
+                <DynamicComponent />
+              </Suspense>
+            ) : (
+              <div>No component found for {subcategory}</div>
+            )}
+          </>
         )}
         {content === "Code" && (
           <CodeTab/>
@@ -115,4 +143,4 @@ const Display = () => {
   );
 };
 
-export default Display;
+export default CategoryPage;

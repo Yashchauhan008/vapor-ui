@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Routes,Route, Outlet} from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
 import ShowcasePage from './pages/ShowcasePage';
-import Layout from './Layout';
-import Display from './components/Display';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import CategoryPage from './pages/CategoryPage';
 
 function App() {
   return (
@@ -13,9 +14,16 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/showcase' element={<ShowcasePage/>}/>
-          <Route path='/:category/:subcategory' element={<Layout/>}>
-            <Route index element={<Display/>}/>
-          </Route>        
+          <Route path='/:category/:subcategory' element={
+               <div className="full-screen">
+               <Header />
+               <div className="category-container">
+                 <Sidebar />
+                 {/* <Display category={category} subcategory={subcategory} /> */}
+                   <CategoryPage/>
+               </div>
+             </div>
+            }/>
         </Routes>
       </Router>
     </>
