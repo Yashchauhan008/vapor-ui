@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee from "./demoComponents/Marquee";
+import Marquee from "../constants/Codes/Marquee";
 import RangeSlider from "./RangeSlider";
 import TestSquare from "./TestSquare";
 

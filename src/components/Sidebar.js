@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { CATEGORIES, NEW, UPDATED } from '../assets/categorylist.test'
+import { CATEGORIES, NEW, UPDATED } from '../constants/categorylist.test'
 import useCategory from '../utils/useCategory';
 import { useNavigate } from 'react-router-dom';
 

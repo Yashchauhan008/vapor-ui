@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PreviewTab from "./PreviewTab";  
 import CodeTab from "./CodeTab";
 import ContributionTab from "./ContributionTab";
+// import AnimatedContentDemo from "../Demo/AnimatedContentDemo"
+import Marquee from "../constants/Codes/Marquee";
 
 const Display = () => {
   const { category, subcategory } = useParams();
 
   const [content, setContent] = useState("Preview");
+  const [demoName, setDemoName] = useState("");
 
+  useEffect(() => {
+    setDemoName(convertToPascalCaseWithDemo(subcategory));
+  }, [subcategory]);
+
+  function convertToPascalCaseWithDemo(str) {
+   return `<${str.split('-') // Split by hyphen
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+        .join('') + 'Demo'}/>`; // Join and append 'Demo'
+}
 
 
   return (
@@ -90,7 +102,7 @@ const Display = () => {
       </div>
       <div className="content-box">
         {content === "Preview" && (
-          <PreviewTab/>
+          demoName && <demoName/>
         )}
         {content === "Code" && (
           <CodeTab/>
