@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import Marquee from "./demoComponents/Marquee";
-import PreviewTab from "./PreviewTab";
+import PreviewTab from "./PreviewTab";  
 import CodeTab from "./CodeTab";
 import ContributionTab from "./ContributionTab";
 

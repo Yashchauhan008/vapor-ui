@@ -15,7 +15,7 @@ function App() {
           <Route path='/showcase' element={<ShowcasePage/>}/>
           <Route path='/:category/:subcategory' element={<Layout/>}>
             <Route index element={<Display/>}/>
-          </Route>
+          </Route>        
         </Routes>
       </Router>
     </>

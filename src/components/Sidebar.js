@@ -32,7 +32,7 @@ const Sidebar = () => {
               const isNew = NEW.includes(subcat);
               const isUpdated = UPDATED.includes(subcat);
               // Determine if the current subcategory is active
-              const isActive = subcat.toLowerCase() == subcategory.toLowerCase();
+              const isActive = subcat.toLowerCase() === subcategory.toLowerCase();
 
               return (
                 <h4 
