@@ -304,11 +304,11 @@ const LandingPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
       >
-        <a href="#" className="mx-2 hover:text-cyan-300 transition-colors">Documentation</a>
+        <button className="mx-2 hover:text-cyan-300 transition-colors">Documentation</button>
         <span className="mx-2">•</span>
-        <a href="#" className="mx-2 hover:text-cyan-300 transition-colors">GitHub</a>
+        <button className="mx-2 hover:text-cyan-300 transition-colors">GitHub</button>
         <span className="mx-2">•</span>
-        <a href="#" className="mx-2 hover:text-cyan-300 transition-colors">npm</a>
+        <button className="mx-2 hover:text-cyan-300 transition-colors">npm</button>
       </motion.div>
     </div>
   );
