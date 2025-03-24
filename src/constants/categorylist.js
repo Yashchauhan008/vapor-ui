@@ -1,5 +1,5 @@
 // Highlighted sidebar items
-export const NEW = ['Dither', 'Animated List', 'Gooey Nav', 'Threads', 'Lightning', 'Folder'];
+export const NEW = ['Testimonial Carousel', 'Apple Dock', 'Tech Stack Showcase'];
 export const UPDATED = [];
 
 // Used for main sidebar navigation
@@ -14,6 +14,13 @@ export const CATEGORIES = [
     name: 'Testimonials',
     subcategories: [
       'Testimonial Carousel',
+    ]
+  },
+  {
+    name: 'Interactive Elements',
+    subcategories: [
+      'Apple Dock',
+      'Tech Stack Showcase'
     ]
   },
   // {

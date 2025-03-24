@@ -4,6 +4,8 @@ import CodeTab from "../components/CodeTab";
 import ContributionTab from "../components/ContributionTab";
 // import AnimatedContentDemo from "../Demo/AnimatedContentDemo"
 import { componentMap } from "../constants/Components";
+import AppleDock from '../content/AppleDock';
+import TechStackShowcase from '../content/TechStackShowcase';
 
 const CategoryPage = () => {
   const { category, subcategory } = useParams();
@@ -137,6 +139,7 @@ const CategoryPage = () => {
         )}
         {content === "Contribute" && (
           <ContributionTab/>
+          // </>
         )}
       </div>
     </div>

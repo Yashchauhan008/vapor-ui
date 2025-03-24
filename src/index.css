@@ -88,7 +88,7 @@ code {
 
 .sidebar {
   background-color: black;
-  width: 300px;
+  width: 330px;
   overflow-y: auto;
   padding: 10px 30px;
   padding-bottom: 100px;
@@ -432,6 +432,34 @@ code {
   padding: 70px 0;
 }
 
-.preview-box h2{
+.states h3{
+  /* background-color: red; */
+  margin: 15px 0;
+  line-height: 40px;
   font-size: 30px;
+}
+
+/* Code Tab Container */
+.code-tab-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.code-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.code-error {
+  color: #ff6b6b;
+  padding: 20px;
+  border: 2px solid #ff6b6b;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.code-error ul {
+  margin: 10px 0 0 20px;
 }

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import TestimonialCarousel from "../content/TestimonialCarousel";
 
 const TestimonialCarouselDemo = () => {
@@ -43,9 +42,11 @@ const TestimonialCarouselDemo = () => {
         <div className="preview-box">
           <TestimonialCarousel testimonials={testimonials} />
         </div>
-        <h2>Customization</h2>
-        <h2>Props</h2>
-        <h2>Dependencies</h2>
+        <div className="states">
+        <h3>Customization</h3>
+        <h3>Props</h3>
+        <h3>Dependencies</h3>
+        </div>
       </div>
     </>
   );

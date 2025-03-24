@@ -2,9 +2,10 @@ const Testimonials = {
     'testimonial-carousel': () => import("../Demo/TestimonialCarouselDemo"),
   };
   
-//   const blueElements = {
-//     'blue': () => import("../Demo/BlueDemo"),
-//   };
+  const InteractiveElements = {
+    'apple-dock': () => import("../Demo/AppleDockDemo"),
+    'tech-stack-showcase': () => import("../Demo/TechStackShowcaseDemo"),
+  };
   
 //   const components = {
 //     'animated-list': () => import("../Demo/AnimatedListDemo"),
@@ -16,7 +17,7 @@ const Testimonials = {
   
   export const componentMap = {
     ...Testimonials,
-    // ...blueElements,
+    ...InteractiveElements,
     // ...components,
     // ...marquee,
   };
