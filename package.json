@@ -5,7 +5,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.13.0",
     "@emotion/react": "^11.14.0",
-    "@react-spring/web": "^9.7.5",
+    "@formkit/auto-animate": "^0.8.2",
     "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.1.0",
     "@testing-library/dom": "^10.4.0",
