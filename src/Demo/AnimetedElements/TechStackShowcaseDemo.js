@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import TechStackShowcase from "../content/TechStackShowcase";
+import TechStackShowcase from "../../content/AnimatedElements/TechStackShowcase";
 
 const TechStackShowcaseDemo = () => {
   // Sample techStacks data

@@ -1,10 +1,12 @@
 const Testimonials = {
-    'testimonial-carousel': () => import("../Demo/TestimonialCarouselDemo"),
+    'testimonial-carousel': () => import("../Demo/Testimonial/TestimonialCarouselDemo"),
   };
   
   const InteractiveElements = {
-    'apple-dock': () => import("../Demo/AppleDockDemo"),
-    'tech-stack-showcase': () => import("../Demo/TechStackShowcaseDemo"),
+    'apple-dock': () => import("../Demo/AnimetedElements/AppleDockDemo"),
+    'tech-stack-showcase': () => import("../Demo/AnimetedElements/TechStackShowcaseDemo"),
+    'chandelier': () => import("../Demo/AnimetedElements/ChandelierDemo"),
+    'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
   };
   
 //   const components = {

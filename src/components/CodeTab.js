@@ -1,7 +1,7 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { synthwave84 } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { testimonialCarouselCode } from '../constants/Codes/TestimonialCarouselCode';
+import { testimonialCarouselCode } from '../constants/Testimonials/TestimonialCarouselCode';
 
 const CodeTab = () => {
   if (!testimonialCarouselCode) {

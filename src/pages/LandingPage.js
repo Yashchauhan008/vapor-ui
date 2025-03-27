@@ -176,7 +176,7 @@ const LandingPage = () => {
               whileTap={{ scale: 0.98 }}
               onHoverStart={() => setHovered(true)}
               onHoverEnd={() => setHovered(false)}
-              onClick={()=>{nav("/testimonials/testimonial-carousel")}}
+              onClick={()=>{nav("/interactive-elements/apple-dock")}}
             >
               <span className="relative z-10">Components</span>
               <motion.div 

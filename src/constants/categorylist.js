@@ -1,5 +1,5 @@
 // Highlighted sidebar items
-export const NEW = ['Testimonial Carousel', 'Apple Dock', 'Tech Stack Showcase'];
+export const NEW = ['Chandelier', 'Elastic Accordion'];
 export const UPDATED = [];
 
 // Used for main sidebar navigation
@@ -11,16 +11,18 @@ export const CATEGORIES = [
   //   ]
   // },
   {
-    name: 'Testimonials',
-    subcategories: [
-      'Testimonial Carousel',
-    ]
-  },
-  {
     name: 'Interactive Elements',
     subcategories: [
       'Apple Dock',
-      'Tech Stack Showcase'
+      'Tech Stack Showcase',
+      'Chandelier',
+      'Elastic Accordion'
+    ]
+  },
+  {
+    name: 'Testimonials',
+    subcategories: [
+      'Testimonial Carousel',
     ]
   },
   // {

@@ -430,6 +430,7 @@ code {
   border: 1px solid rgba(255, 255, 255, 0.23);
   border-radius: 40px;
   padding: 70px 0;
+  overflow: hidden;
 }
 
 .states h3{
@@ -438,6 +439,8 @@ code {
   line-height: 40px;
   font-size: 30px;
 }
+
+
 
 /* Code Tab Container */
 .code-tab-container {
@@ -462,4 +465,83 @@ code {
 
 .code-error ul {
   margin: 10px 0 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+.range1 {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 250px;
+  height: 6px;
+  background: #222; /* Dark Track */
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Progress before the Thumb (WebKit Browsers) */
+.range1::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: #222;
+  border-radius: 5px;
+}
+
+/* Progress before Thumb (Firefox) */
+.range1::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: #222;
+  border-radius: 5px;
+}
+
+/* Thumb (WebKit: Chrome, Safari) */
+.range1::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: white; /* White Thumb */
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin-top: -5px; /* Aligns Thumb */
+}
+
+/* Thumb (Firefox) */
+.range1::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Highlight Progress Before Thumb */
+.range1::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, white var(--progress), #222 var(--progress));
+}
+
+/* Add Smooth Transition */
+.range1::-webkit-slider-thumb,
+.range1::-moz-range-thumb {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Thumb Hover Effect */
+.range1:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+.range1:hover::-moz-range-thumb {
+  transform: scale(1.2);
 }

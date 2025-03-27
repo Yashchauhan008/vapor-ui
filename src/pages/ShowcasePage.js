@@ -1,8 +1,9 @@
 import React from 'react'
+import Chandelier from '../content/AnimatedElements/Chandelier'
 
 const ShowcasePage = () => {
   return (
-    <div>ShowcasePage</div>
+    <Chandelier color="#ff00ff" lightColor="#ff00ff"/>
   )
 }
 

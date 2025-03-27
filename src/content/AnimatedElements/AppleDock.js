@@ -6,13 +6,13 @@ const AppleDock = ({ items = [] }) => {
   
   // Default items if none provided
   const dockItems = items.length > 0 ? items : [
-    { id: 1, name: 'Finder', icon: '📁' },
-    { id: 2, name: 'Safari', icon: '🧭' },
-    { id: 3, name: 'Messages', icon: '💬' },
-    { id: 4, name: 'Mail', icon: '✉️' },
-    { id: 5, name: 'Photos', icon: '🖼️' },
-    { id: 6, name: 'Music', icon: '🎵' },
-    { id: 7, name: 'Settings', icon: '⚙️' }
+    { id: 1, name: 'Finder', image: 'https://example.com/finder.png' },
+    { id: 2, name: 'Safari', image: 'https://example.com/safari.png' },
+    { id: 3, name: 'Messages', image: 'https://example.com/messages.png' },
+    { id: 4, name: 'Mail', image: 'https://example.com/mail.png' },
+    { id: 5, name: 'Photos', image: 'https://example.com/photos.png' },
+    { id: 6, name: 'Music', image: 'https://example.com/music.png' },
+    { id: 7, name: 'Settings', image: 'https://example.com/settings.png' }
   ];
 
   // Base size of dock items
@@ -112,9 +112,7 @@ const AppleDock = ({ items = [] }) => {
               <motion.div
                 className="flex items-center justify-center w-full h-full"
               >
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400 flex items-center justify-center shadow-inner">
-                  <span className="text-1xl">{item.icon}</span>
-                </div>
+                <img src={item.image} alt={item.name} className="w-9 h-9 rounded-md" />
               </motion.div>
             </motion.div>
             
