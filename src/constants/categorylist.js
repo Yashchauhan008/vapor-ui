@@ -1,6 +1,6 @@
 // Highlighted sidebar items
-export const NEW = ['Chandelier', 'Elastic Accordion'];
-export const UPDATED = [];
+export const NEW = ["Mask Mouse Effect"];
+export const UPDATED = ['Chandelier', 'Elastic Accordion'];
 
 // Used for main sidebar navigation
 export const CATEGORIES = [
@@ -16,13 +16,26 @@ export const CATEGORIES = [
       'Apple Dock',
       'Tech Stack Showcase',
       'Chandelier',
-      'Elastic Accordion'
+      'Elastic Accordion',
+      'Mask Mouse Effect'
     ]
   },
   {
     name: 'Testimonials',
     subcategories: [
       'Testimonial Carousel',
+    ]
+  },
+  {
+    name: 'Form Elements',
+    subcategories: [
+      'Action Button',
+    ]
+  },
+  {
+    name: 'Testing',
+    subcategories: [
+      'Test Demo',
     ]
   },
   // {

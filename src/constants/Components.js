@@ -7,7 +7,17 @@ const Testimonials = {
     'tech-stack-showcase': () => import("../Demo/AnimetedElements/TechStackShowcaseDemo"),
     'chandelier': () => import("../Demo/AnimetedElements/ChandelierDemo"),
     'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
+    'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo")
   };
+
+  
+  const FormElements = {
+    "action-button": () => import("../Demo/Buttons/ActionButtonDemo")
+  }
+  
+  const Testing = {
+    "test-demo": () => import("../Demo/TestDemo")
+  }
   
 //   const components = {
 //     'animated-list': () => import("../Demo/AnimatedListDemo"),
@@ -20,6 +30,8 @@ const Testimonials = {
   export const componentMap = {
     ...Testimonials,
     ...InteractiveElements,
+    ...FormElements,
+    ...Testing,
     // ...components,
     // ...marquee,
   };

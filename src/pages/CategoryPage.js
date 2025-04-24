@@ -4,17 +4,9 @@ import CodeTab from "../components/CodeTab";
 import ContributionTab from "../components/ContributionTab";
 // import AnimatedContentDemo from "../Demo/AnimatedContentDemo"
 import { componentMap } from "../constants/Components";
-import AppleDock from '../content/AnimatedElements/AppleDock';
-import TechStackShowcase from '../content/AnimatedElements/TechStackShowcase';
-import AnimatedCard from '../constants/Cards/AnimatedCard';
-import ThreeDCardEffect from '../constants/Cards/AnimatedCard';
-import Chandelier from '../content/AnimatedElements/Chandelier';
-import ElasticAccordion from '../content/AnimatedElements/ElasticAccordion';
-
-import human1 from '../assets/images/ElasticAcordianEmages/human3.webp'
-import human2 from '../assets/images/ElasticAcordianEmages/human2.webp'
-import human3 from '../assets/images/ElasticAcordianEmages/human1.webp'
-import human4 from '../assets/images/ElasticAcordianEmages/human4.webp'
+import AnimatedCardGrid from '../content/AnimatedElements/AnimatedCardGrid';
+import TextRevealAnimation from '../content/AnimatedElements/AnimatedCardGrid';
+import OnScrollTextReveal from '../content/AnimatedElements/AnimatedCardGrid';
 
 
 const CategoryPage = () => {
@@ -24,9 +16,6 @@ const CategoryPage = () => {
   const [demoName, setDemoName] = useState("");
   const [DynamicComponent, setDynamicComponent] = useState(null);
 
-  const images = [
-    human1,human2,human3,human4
-  ];
 
   useEffect(() => {
     setDemoName(convertToPascalCaseWithDemo(subcategory));
@@ -152,15 +141,9 @@ const CategoryPage = () => {
           <CodeTab/>
         )}
         {content === "Contribute" && (
-            <ElasticAccordion 
-            images={images} 
-            defaultWidth="10vw"
-            expandedWidth="35vw"
-            elasticityParams={{
-              expandEase: 'elastic(1, .5)',
-              collapseEase: 'elastic(1, .4)'
-            }}
-          />
+          <>
+          <OnScrollTextReveal/>
+    </>
         )}
       </div>
     </div>
