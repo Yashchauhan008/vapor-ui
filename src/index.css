@@ -430,7 +430,6 @@ code {
 .preview-box{
   border: 1px solid rgba(255, 255, 255, 0.23);
   border-radius: 40px;
-  padding: 70px 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -479,11 +478,10 @@ code {
 
 
 
-
 .range1 {
   -webkit-appearance: none;
   appearance: none;
-  width: 250px;
+  width:500px;
   height: 6px;
   background: #222; /* Dark Track */
   border-radius: 5px;

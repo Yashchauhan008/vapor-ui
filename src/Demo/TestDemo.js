@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Button1 from "../content/Buttons/ActionButton";
+import FeatureCards from "../content/Cards/FeatureCards";
 
 const TestDemo = () => {
   return (
     <>
       <div className="demo-box">
-        <div className="preview-box d-flex justify-content-center gap-3">
-          <Button1
-            circleColor={["#01EBFF", "#01EBFF90"]}
-            hoverTextColor="#000"
-            fontWeight="thin"
-          >
-            Welcome Champ 😎
-          </Button1>
-          <Button1 circleColor="#FF5733" fontWeight="light">Login 🙏🏻</Button1>
-          <Button1 circleColor={["#FF5733", "#FFC300"]} fontWeight="bold">Explore</Button1>
+        <div className="preview-box d-flex justify-content-center gap-3 p-10">
+          <FeatureCards/>
         </div>
         <div className="states">
           <h3>Customization</h3>

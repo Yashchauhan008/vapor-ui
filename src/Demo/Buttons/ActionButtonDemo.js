@@ -6,7 +6,7 @@ const ActionButtonDemo = () => {
   return (
     <>
   <div className="demo-box">
-        <div className="preview-box d-flex justify-content-center gap-3">
+        <div className="preview-box d-flex justify-content-center gap-5 p-12">
           <Button1
             circleColor={["#01EBFF", "#01EBFF90"]}
             hoverTextColor="#000"

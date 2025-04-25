@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const AppleDock = ({ items = [] }) => {
+const AppleDock = ({ 
+  items = [], 
+  baseSize = 56, 
+  baseGap = 12,
+  hoverScale = 1.8,
+  neighborScale = 1.4,
+  secondNeighborScale = 1.2
+}) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   
   // Default items if none provided
   const dockItems = items.length > 0 ? items : [
-    { id: 1, name: 'Finder', image: 'https://example.com/finder.png' },
-    { id: 2, name: 'Safari', image: 'https://example.com/safari.png' },
-    { id: 3, name: 'Messages', image: 'https://example.com/messages.png' },
-    { id: 4, name: 'Mail', image: 'https://example.com/mail.png' },
-    { id: 5, name: 'Photos', image: 'https://example.com/photos.png' },
-    { id: 6, name: 'Music', image: 'https://example.com/music.png' },
-    { id: 7, name: 'Settings', image: 'https://example.com/settings.png' }
+    { id: 1, name: 'Finder', imageurl: 'https://example.com/finder.png' },
+    { id: 2, name: 'Safari', imageurl: 'https://example.com/safari.png' },
+    { id: 3, name: 'Messages', imageurl: 'https://example.com/messages.png' },
+    { id: 4, name: 'Mail', imageurl: 'https://example.com/mail.png' },
+    { id: 5, name: 'Photos', imageurl: 'https://example.com/photos.png' },
+    { id: 6, name: 'Music', imageurl: 'https://example.com/music.png' },
+    { id: 7, name: 'Settings', imageurl: 'https://example.com/settings.png' }
   ];
-
-  // Base size of dock items
-  const baseSize = 56;
-  const baseGap = 12;
 
   // Calculate scale for each item based on distance from hovered item
   const getScale = (index) => {
@@ -25,9 +28,9 @@ const AppleDock = ({ items = [] }) => {
     
     const distance = Math.abs(index - hoveredIndex);
     
-    if (distance === 0) return 1.8; // Hovered item
-    if (distance === 1) return 1.4; // Direct neighbors
-    if (distance === 2) return 1.2; // Second neighbors
+    if (distance === 0) return hoverScale; // Hovered item
+    if (distance === 1) return neighborScale; // Direct neighbors
+    if (distance === 2) return secondNeighborScale; // Second neighbors
     return 1; // Default scale
   };
 
@@ -112,7 +115,17 @@ const AppleDock = ({ items = [] }) => {
               <motion.div
                 className="flex items-center justify-center w-full h-full"
               >
-                <img src={item.image} alt={item.name} className="w-9 h-9 rounded-md" />
+                {item.imageurl && (
+                  <img 
+                    src={item.imageurl} 
+                    alt={item.name} 
+                    className="w-9 h-9 rounded-md"
+                    onError={(e) => {
+                      // Fallback for broken imageurls
+                      e.target.src = "data:imageurl/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='9' y1='9' x2='15' y2='15'%3E%3C/line%3E%3Cline x1='15' y1='9' x2='9' y2='15'%3E%3C/line%3E%3C/svg%3E";
+                    }}
+                  />
+                )}
               </motion.div>
             </motion.div>
             
