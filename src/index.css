@@ -448,7 +448,7 @@ code {
 /* Code Tab Container */
 .code-tab-container {
   padding: 20px;
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -470,7 +470,23 @@ code {
   margin: 10px 0 0 20px;
 }
 
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Add to your CSS file */
+.code-box,
+.code-box pre,
+.code-box code,
+.code-box * {
+  background-color: black !important;
+}
 
 
 
@@ -549,10 +565,14 @@ code {
 }
 
 
-
 .shit{
   background-color: #f08597;
 }
 
+/* tailwind.css or index.css */
+.custom-line-height {
+  line-height: 1.2rem;
+}
 
-/* button1=========================== */
+
+

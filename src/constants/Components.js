@@ -14,6 +14,10 @@ const Testimonials = {
   const FormElements = {
     "action-button": () => import("../Demo/Buttons/ActionButtonDemo")
   }
+
+  const Cards = {
+    "feature-cards": () => import("../Demo/Cards/FeatureCardsDemo")
+  }
   
   const Testing = {
     "test-demo": () => import("../Demo/TestDemo")
@@ -31,6 +35,7 @@ const Testimonials = {
     ...Testimonials,
     ...InteractiveElements,
     ...FormElements,
+    ...Cards,
     ...Testing,
     // ...components,
     // ...marquee,

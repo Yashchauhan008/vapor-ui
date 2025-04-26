@@ -33,6 +33,12 @@ export const CATEGORIES = [
     ]
   },
   {
+    name: 'Cards',
+    subcategories: [
+      'Feature Cards',
+    ]
+  },
+  {
     name: 'Testing',
     subcategories: [
       'Test Demo',

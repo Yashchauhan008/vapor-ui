@@ -142,7 +142,7 @@ const CategoryPage = () => {
         )}
         {content === "Contribute" && (
           <>
-          <OnScrollTextReveal/>
+          <ContributionTab/>
     </>
         )}
       </div>
