@@ -1,4 +1,4 @@
-export const TestimonialCarouselCode = {
+export const FeatureCardsCode = {
   installation:"",
   imports:"",
   parameters:"",

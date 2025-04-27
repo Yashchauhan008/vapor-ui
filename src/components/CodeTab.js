@@ -71,6 +71,8 @@ const CodeTab = () => {
               item => item && typeof item === 'object' &&
                       (item.installation !== undefined ||
                        item.usage !== undefined ||
+                       item.parameters !== undefined ||
+                       item.imports !== undefined ||
                        item.code !== undefined)
             );
             if (possibleExport) {
@@ -113,7 +115,7 @@ const CodeTab = () => {
         <ul>
           <li>The component name in the URL is correct</li>
           <li>The component exists in our library</li>
-          <li>The component code has the expected properties (installation, usage, code)</li>
+          <li>The component code has the expected properties (installation, imports, parameters, usage, code)</li>
         </ul>
       </div>
     );
@@ -161,6 +163,8 @@ const CodeTab = () => {
   return (
     <div className="code-tab-container">
       {renderSection("Installation", codeContent.installation || "// Installation instructions not available", "installation")}
+      {renderSection("Imports", codeContent.imports || "// Imports examples not available", "imports")}
+      {renderSection("Parameters", codeContent.parameters || "// Parameters examples not available", "parameters")}
       {renderSection("Usage", codeContent.usage || "// Usage examples not available", "usage")}
       {renderSection("Code", codeContent.code || "// Component code not available", "code")}
     </div>

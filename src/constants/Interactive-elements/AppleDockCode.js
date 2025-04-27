@@ -1,13 +1,30 @@
 export const AppleDockCode = {
   installation: "npm install framer-motion",
+  imports:`import tikTok from "../../path/to/img/tik-tok.png";
+import instagram from "../../path/to/img/instagram.png";
+import tinder from "../../path/to/img/connection.png";
+import spotify from "../../path/to/img/spotify.png";
+import slack from "../../path/to/img/slack.png";
+import figma from "../../path/to/img/figma.png";
+import chrome from "../../path/to/img/chrome.png";
+`,
+  parameters:`  const item = [
+    { id: 1, name: "Finder", imageurl: tikTok },
+    { id: 2, name: "Safari", imageurl: instagram },
+    { id: 3, name: "Messages", imageurl: tinder },
+    { id: 4, name: "Mail", imageurl: spotify },
+    { id: 5, name: "Photos", imageurl: slack },
+    { id: 6, name: "Music", imageurl: figma },
+    { id: 7, name: "Settings", imageurl: chrome },
+  ];`,
   usage: 
   `<AppleDock
     items={items}
-    baseSize={baseSize}
-    baseGap={baseGap}
-    hoverScale={hoverScale}
-    neighborScale={neighborScale}
-    secondNeighborScale={secondNeighborScale}
+    baseSize="56"
+    baseGap="12"
+    hoverScale="1.8"
+    neighborScale="1.4"
+    secondNeighborScale="1.2"
 />`,
 
   code: `import React, { useState } from 'react';

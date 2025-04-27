@@ -12,7 +12,7 @@ const Testimonials = {
 
   
   const FormElements = {
-    "action-button": () => import("../Demo/Buttons/ActionButtonDemo")
+    "action-button": () => import("../Demo/FormElements/ActionButtonDemo")
   }
 
   const Cards = {
