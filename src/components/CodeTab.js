@@ -6,7 +6,6 @@ import { componentCodeMap } from "../constants/componentCode";
 import { useParams } from "react-router-dom";
 import { FiCopy, FiCheck } from "react-icons/fi"; // import icons
 
-
 // Create a custom style that's completely black
 const blackTheme = {
   ...synthwave84,
@@ -129,44 +128,55 @@ const CodeTab = () => {
     );
   }
 
-  const renderSection = (title, content, sectionKey) => (
-    <>
-      <h4 className="text-white text-4xl font-semibold mt-6 mb-4">{title}</h4>
-      <div className="relative code-box mb-4" style={{ backgroundColor: 'black' }}>
-      <button
-  onClick={() => handleCopy(content, sectionKey)}
-  className="absolute top-4 right-4 bg-white text-white text-sm px-3 py-1 rounded-md hover:bg-gray-300 transition"
->
-  {copiedSection === sectionKey ? <FiCheck size={18} /> : <FiCopy size={18} />}
-</button>
-        <SyntaxHighlighter
-          language="javascript"
-          style={blackTheme}
-          customStyle={{
-            backgroundColor: 'black',
-            background: 'black',
-            padding: '20px',
-            borderRadius: '20px',
-            margin: '0'
-          }}
-          wrapLines={true}
-          lineProps={{ style: { backgroundColor: 'black', background: 'black' } }}
-          codeTagProps={{ style: { backgroundColor: 'black', background: 'black' } }}
-          PreTag={props => <pre {...props} style={{ ...props.style, backgroundColor: 'black', background: 'black' }} />}
-        >
-          {content}
-        </SyntaxHighlighter>
-      </div>
-    </>
-  );
+  const renderSection = (title, content, sectionKey) => {
+    // Only render the section if content is not empty/null/undefined
+    if (!content || content === "// Installation instructions not available" || 
+        content === "// Imports examples not available" || 
+        content === "// Parameters examples not available" || 
+        content === "// Usage examples not available" || 
+        content === "// Component code not available") {
+      return null;
+    }
+
+    return (
+      <>
+        <h4 className="text-white text-4xl font-semibold mt-6 mb-4">{title}</h4>
+        <div className="relative code-box mb-4" style={{ backgroundColor: 'black' }}>
+          <button
+            onClick={() => handleCopy(content, sectionKey)}
+            className="absolute top-4 right-4 bg-white text-white text-sm px-3 py-1 rounded-md hover:bg-gray-300 transition"
+          >
+            {copiedSection === sectionKey ? <FiCheck size={18} /> : <FiCopy size={18} />}
+          </button>
+          <SyntaxHighlighter
+            language="javascript"
+            style={blackTheme}
+            customStyle={{
+              backgroundColor: 'black',
+              background: 'black',
+              padding: '20px',
+              borderRadius: '20px',
+              margin: '0'
+            }}
+            wrapLines={true}
+            lineProps={{ style: { backgroundColor: 'black', background: 'black' } }}
+            codeTagProps={{ style: { backgroundColor: 'black', background: 'black' } }}
+            PreTag={props => <pre {...props} style={{ ...props.style, backgroundColor: 'black', background: 'black' }} />}
+          >
+            {content}
+          </SyntaxHighlighter>
+        </div>
+      </>
+    );
+  };
 
   return (
     <div className="code-tab-container">
-      {renderSection("Installation", codeContent.installation || "// Installation instructions not available", "installation")}
-      {renderSection("Imports", codeContent.imports || "// Imports examples not available", "imports")}
-      {renderSection("Parameters", codeContent.parameters || "// Parameters examples not available", "parameters")}
-      {renderSection("Usage", codeContent.usage || "// Usage examples not available", "usage")}
-      {renderSection("Code", codeContent.code || "// Component code not available", "code")}
+      {renderSection("Installation", codeContent.installation, "installation")}
+      {renderSection("Imports", codeContent.imports, "imports")}
+      {renderSection("Parameters", codeContent.parameters, "parameters")}
+      {renderSection("Usage", codeContent.usage, "usage")}
+      {renderSection("Code", codeContent.code, "code")}
     </div>
   );
 };

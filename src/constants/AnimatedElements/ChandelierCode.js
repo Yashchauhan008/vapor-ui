@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+export const ChandelierCode = {
+    installation:"",
+    imports:"",
+    parameters:"",
+    usage:`<Chandelier ropeColor="#fff" lightColor="#01EBFF"/>`,
+    code:`import React, { useEffect, useRef, useState } from 'react';
 
 class Vector {
   constructor(x, y) {
@@ -335,4 +340,5 @@ const Chandelier = ({ ropeColor = '#aaa', lightColor = '#ffcc00' }) => {
   );
 };
 
-export default Chandelier;
+export default Chandelier;`,
+}

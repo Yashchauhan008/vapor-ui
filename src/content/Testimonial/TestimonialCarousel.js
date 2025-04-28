@@ -138,14 +138,14 @@ const TestimonialCarousel = ({testimonials}) => {
           variants={quotationMarkVariants}
           initial="initial"
           animate="animate"
-          key={`quote-${currentIndex}`}
+          key={"quote-" + currentIndex}
         >
           "
         </motion.div>
 
         <AnimatePresence custom={direction} mode="wait">
           <motion.div
-            key={`testimonial-${currentIndex}`}
+            key={"testimonial-" + currentIndex}
             custom={direction}
             variants={containerVariants}
             initial="hidden"
@@ -164,12 +164,12 @@ const TestimonialCarousel = ({testimonials}) => {
               className="flex items-center" 
               variants={itemVariants}
             >
-              <div className={`flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br ${testimonials[currentIndex].color} flex items-center justify-center text-white font-bold text-xl shadow-lg`}>
+              <div className={"flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br " + testimonials[currentIndex].color + " flex items-center justify-center text-white font-bold text-xl shadow-lg"}>
                 {testimonials[currentIndex].avatar}
               </div>
               <div className="ml-4">
                 <p className="text-white font-semibold">{testimonials[currentIndex].name}</p>
-                <p className="text-indigo-300 text-sm">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</p>
+                <p className="text-indigo-300 text-sm">{testimonials[currentIndex].role + ", " + testimonials[currentIndex].company}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -179,9 +179,9 @@ const TestimonialCarousel = ({testimonials}) => {
         <div className="flex justify-center mt-8">
           {testimonials.map((_, index) => (
             <motion.button
-              key={`dot-${index}`}
+              key={"dot-" + index}
               onClick={() => handleDotClick(index)}
-              className={`w-2 h-2 mx-1 rounded-full ${index === currentIndex ? 'bg-indigo-400' : 'bg-slate-500'}`}
+              className={"w-2 h-2 mx-1 rounded-full " + (index === currentIndex ? "bg-indigo-400" : "bg-slate-500")}
               whileHover={{ scale: 1.5 }}
               whileTap={{ scale: 0.9 }}
               animate={index === currentIndex ? { scale: [1, 1.3, 1], opacity: 1 } : { opacity: 0.6 }}

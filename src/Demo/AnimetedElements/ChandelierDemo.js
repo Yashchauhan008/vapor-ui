@@ -5,7 +5,7 @@ const ChandelierDemo = () => {
     <>
       <div className="demo-box">
         <div className="preview-box" style={{paddingTop: '0px'}}>
-        <Chandelier color="#fff" lightColor="#01EBFF"/>
+        <Chandelier ropeColor="#fff" lightColor="#01EBFF"/>
         </div>
         <div className="states">
           <h3>Customization</h3>

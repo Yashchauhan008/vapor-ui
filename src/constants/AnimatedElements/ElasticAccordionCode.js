@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+export const ElasticAccordionCode = {
+    installation:"npm install gsap",
+    imports:"",
+    parameters:"",
+    usage:"",
+    code:`import React, { useState } from 'react';
 import { gsap } from 'gsap';
 
 const ElasticAccordion = ({ 
@@ -66,10 +71,5 @@ const ElasticAccordion = ({
   );
 };
 
-export default ElasticAccordion;
-// images, 
-// defaultWidth = '15vw', 
-// expandedWidth = '42vw', 
-// height = '75vh', 
-// expandEase = '50', 
-// collapseEase = '40' 
+export default ElasticAccordion; `,
+}

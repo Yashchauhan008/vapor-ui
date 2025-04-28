@@ -3,29 +3,26 @@ const Testimonials = {
   };
   
   const InteractiveElements = {
-    'apple-dock': () => import("../constants/Interactive-elements/AppleDockCode"),
-    // 'tech-stack-showcase': () => import("../Demo/AnimetedElements/TechStackShowcaseDemo"),
-    // 'chandelier': () => import("../Demo/AnimetedElements/ChandelierDemo"),
-    // 'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
-    // 'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo")
+    'apple-dock': () => import("../constants/AnimatedElements/AppleDockCode"),
+    'tech-stack-showcase': () => import("../constants/AnimatedElements/TechStackShowcaseCode"),
+    'chandelier': () => import("../constants/AnimatedElements/ChandelierCode"),
+    'elastic-accordion': () => import("../constants/AnimatedElements/ElasticAccordionCode"),
+    'mask-mouse-effect': () => import("../constants/AnimatedElements/MaskMouseEffectCode")
   };
 
   
-//   const FormElements = {
-//     "action-button": () => import("../Demo/Buttons/ActionButtonDemo")
-//   }
+  const FormElements = {
+    "action-button": () => import("../constants/FormElements/ActionButtonCode")
+  }
 
-//   const Cards = {
-//     "feature-cards": () => import("../Demo/Cards/FeatureCardsDemo")
-//   }
+  const Cards = {
+    "feature-cards": () => import("../constants/Cards/FeatureCardsCode")
+  }
   
-//   const Testing = {
-//     "test-demo": () => import("../Demo/TestDemo")
-//   }
-  
-//   const components = {
-//     'animated-list': () => import("../Demo/AnimatedListDemo"),
-//   };
+  const Testing = {
+    "test-demo": () => import("../Demo/TestDemo")
+  }
+
   
 //   const marquee = {
 //     'aurora': () => import("../demo/Backgrounds/AuroraDemo"),
@@ -34,9 +31,9 @@ const Testimonials = {
   export const componentCodeMap = {
     ...Testimonials,
     ...InteractiveElements,
-    // ...FormElements,
-    // ...Cards,
-    // ...Testing,
+    ...FormElements,
+    ...Cards,
+    ...Testing,
     // ...components,
     // ...marquee,
   };

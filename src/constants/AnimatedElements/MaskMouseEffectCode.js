@@ -1,4 +1,19 @@
-import { useEffect, useRef } from 'react';
+export const MaskMouseEffectCode = {
+    installation:"",
+    imports:"",
+    parameters:"",
+    usage:` <MaskMouseEffect
+    bgColor="#000000"
+    textGradientStart="#64ffda"
+    textGradientEnd="#00bcd4"
+    hiddenGradientTop="pink"
+    hiddenGradientMiddle="#f08597"
+    hiddenGradientBottom="pink"
+    mainText="Hover over this text to see the effect"
+    hiddenText="Surprise! Hidden content revealed"
+    expandedMaskSize={250}
+/>`,
+    code:`import { useEffect, useRef } from 'react';
 
 export default function MaskMouseEffect({
   // Background color
@@ -174,4 +189,5 @@ export default function MaskMouseEffect({
       </div>
     </div>
   );
+}`,
 }

@@ -1,5 +1,5 @@
 export const FeatureCardsCode = {
-  installation:"",
+  installation:"FeatureCardsCode",
   imports:"",
   parameters:"",
   usage:"",

@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import AppleDock from "../../content/AnimatedElements/AppleDock";
-import tikTok from "../../assets/images/appleDockImages/tik-tok.png";
-import instagram from "../../assets/images/appleDockImages/instagram.png";
-import tinder from "../../assets/images/appleDockImages/connection.png";
-import spotify from "../../assets/images/appleDockImages/spotify.png";
-import slack from "../../assets/images/appleDockImages/slack.png";
-import figma from "../../assets/images/appleDockImages/figma.png";
-import chrome from "../../assets/images/appleDockImages/chrome.png";
-import GsapMaskMouseEffect from "../../content/AnimatedElements/MaskMouseEffect";
+import MaskMouseEffect from "../../content/AnimatedElements/MaskMouseEffect";
 
 const MaskMouseEffectDemo = () => {
 
@@ -17,7 +8,7 @@ const MaskMouseEffectDemo = () => {
     <>
       <div className="demo-box">
         <div className="preview-box">
-          <GsapMaskMouseEffect
+          <MaskMouseEffect
             bgColor="#000000"
             textGradientStart="#64ffda"
             textGradientEnd="#00bcd4"
