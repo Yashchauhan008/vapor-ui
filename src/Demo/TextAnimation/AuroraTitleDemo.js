@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Button1 from "../content/FormElements/ActionButton";
-import FeatureCards from "../content/Cards/FeatureCards";
-import AuroraTitle from "../content/temp";
+import AuroraTitle from "../../content/TextAnimation/AuroraTitle";
 
-const TestDemo = () => {
+const AuroraTitleDemo = () => {
   return (
     <>
       <div className="demo-box">
@@ -12,7 +10,7 @@ const TestDemo = () => {
       <h1 className="text-center">
         <AuroraTitle
           title="Aurora Magic"
-          fontSize="20rem"
+          fontSize="10rem"
           colors = {["#01EBFF", "#ffc640", "#33ff8c", "#4CFF01"]}
           fontWeight="900"
         />
@@ -32,4 +30,4 @@ const TestDemo = () => {
   );
 };
 
-export default TestDemo;
+export default AuroraTitleDemo;

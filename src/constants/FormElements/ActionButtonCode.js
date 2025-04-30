@@ -2,7 +2,7 @@ export const ActionButtonCode = {
     installation:"npm install lucide-react",
     imports:"",
     parameters:"",
-    usage:`<Button1 circleColor={["#FF5733", "#FFC300"]} fontWeight="bold">Explore</Button1>`,
+    usage:`<ActionButton circleColor={["#FF5733", "#FFC300"]} fontWeight="bold">Explore</ActionButton>`,
     code:`import React from 'react';
 import { ArrowRight } from 'lucide-react'; // optional icon
 

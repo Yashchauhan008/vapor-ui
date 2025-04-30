@@ -17,7 +17,8 @@ export const CATEGORIES = [
       'Tech Stack Showcase',
       'Chandelier',
       'Elastic Accordion',
-      'Mask Mouse Effect'
+      'Mask Mouse Effect',
+      'Memory Game'
     ]
   },
   {
@@ -36,6 +37,12 @@ export const CATEGORIES = [
     name: 'Cards',
     subcategories: [
       'Feature Cards',
+    ]
+  },
+  {
+    name: 'Text Animation',
+    subcategories: [
+      'Aurora Title',
     ]
   },
   {

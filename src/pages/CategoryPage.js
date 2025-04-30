@@ -7,6 +7,8 @@ import { componentMap } from "../constants/Components";
 import AnimatedCardGrid from '../content/AnimatedElements/AnimatedCardGrid';
 import TextRevealAnimation from '../content/AnimatedElements/AnimatedCardGrid';
 import OnScrollTextReveal from '../content/AnimatedElements/AnimatedCardGrid';
+import MemoryGame from '../content/temp';
+import img from "../assets/images/ElasticAcordianEmages/human1.webp"
 
 
 const CategoryPage = () => {
@@ -15,6 +17,18 @@ const CategoryPage = () => {
   const [content, setContent] = useState("Preview");
   const [demoName, setDemoName] = useState("");
   const [DynamicComponent, setDynamicComponent] = useState(null);
+
+
+  const cardImages = [
+    img,
+    img,
+    img,
+    img,
+    img,
+    img,
+    img,
+    img
+  ];
 
 
   useEffect(() => {
@@ -142,7 +156,7 @@ const CategoryPage = () => {
         )}
         {content === "Contribute" && (
           <>
-          <ContributionTab/>
+         <ContributionTab/>
     </>
         )}
       </div>

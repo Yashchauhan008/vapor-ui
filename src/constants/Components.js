@@ -7,7 +7,8 @@ const Testimonials = {
     'tech-stack-showcase': () => import("../Demo/AnimetedElements/TechStackShowcaseDemo"),
     'chandelier': () => import("../Demo/AnimetedElements/ChandelierDemo"),
     'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
-    'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo")
+    'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo"),
+    'memory-game': () => import("../Demo/AnimetedElements/MemoryGameDemo")
   };
 
   
@@ -17,6 +18,10 @@ const Testimonials = {
 
   const Cards = {
     "feature-cards": () => import("../Demo/Cards/FeatureCardsDemo")
+  }
+
+  const TextAnimation = {
+    "aurora-title": () => import("../Demo/TextAnimation/AuroraTitleDemo")
   }
   
   const Testing = {
@@ -37,6 +42,7 @@ const Testimonials = {
     ...FormElements,
     ...Cards,
     ...Testing,
+    ...TextAnimation
     // ...components,
     // ...marquee,
   };
