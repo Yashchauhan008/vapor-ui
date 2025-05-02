@@ -18,7 +18,17 @@ export const CATEGORIES = [
       'Chandelier',
       'Elastic Accordion',
       'Mask Mouse Effect',
-      'Memory Game'
+      'Memory Game',
+      'Social Icons Grid'
+    ]
+  },
+  {
+    name: 'Cards',
+    subcategories: [
+      'Feature Cards',
+      'Flip Gallery',
+      'Card Stack',
+      'Canvas Card'
     ]
   },
   {
@@ -31,12 +41,6 @@ export const CATEGORIES = [
     name: 'Form Elements',
     subcategories: [
       'Action Button',
-    ]
-  },
-  {
-    name: 'Cards',
-    subcategories: [
-      'Feature Cards',
     ]
   },
   {

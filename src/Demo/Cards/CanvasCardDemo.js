@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../assets/images/ElasticAcordianEmages/human1.webp"
-import img2 from "../assets/images/ElasticAcordianEmages/human2.webp"
-import CanvasCard from "../content/temp";
+import img1 from "../../assets/images/ElasticAcordianEmages/human1.webp"
+import img2 from "../../assets/images/ElasticAcordianEmages/human2.webp"
+import CanvasCard from "../../content/Cards/CanvasCard";
 
-const TestDemo = () => {
+const CanvasCardDemo = () => {
 
   
   return (
@@ -46,4 +46,4 @@ const TestDemo = () => {
   );
 };
 
-export default TestDemo;
+export default CanvasCardDemo;

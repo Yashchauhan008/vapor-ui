@@ -8,7 +8,8 @@ const Testimonials = {
     'chandelier': () => import("../Demo/AnimetedElements/ChandelierDemo"),
     'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
     'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo"),
-    'memory-game': () => import("../Demo/AnimetedElements/MemoryGameDemo")
+    'memory-game': () => import("../Demo/AnimetedElements/MemoryGameDemo"),
+    'social-icons-grid': () => import("../Demo/AnimetedElements/SocialIconsGridDemo")
   };
 
   
@@ -17,7 +18,10 @@ const Testimonials = {
   }
 
   const Cards = {
-    "feature-cards": () => import("../Demo/Cards/FeatureCardsDemo")
+    "feature-cards": () => import("../Demo/Cards/FeatureCardsDemo"),
+    "flip-gallery": () => import("../Demo/Cards/FlipGalleryDemo"),
+    "card-stack": () => import("../Demo/Cards/CardStackDemo"),
+    "canvas-card": () => import("../Demo/Cards/CanvasCardDemo")
   }
 
   const TextAnimation = {
