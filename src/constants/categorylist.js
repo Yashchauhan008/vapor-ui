@@ -28,7 +28,10 @@ export const CATEGORIES = [
       'Feature Cards',
       'Flip Gallery',
       'Card Stack',
-      'Canvas Card'
+      'Canvas Card',
+      'Magic Wand Reveal',
+      'Instagram Carousel',
+      'Kippo Card Swiper'
     ]
   },
   {
@@ -41,6 +44,7 @@ export const CATEGORIES = [
     name: 'Form Elements',
     subcategories: [
       'Action Button',
+      'Full Screen Navbar'
     ]
   },
   {

@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../assets/images/extra/hero.webp";
-import CanvasCard from "../content/temp";
-import FullScreenNavbar from "../content/temp";
-import MagicWandReveal from "../content/temp";
-import GlassmorphismInteractive from "../content/temp";
-import GlowTag from "../content/temp";
-import KippoHoverCard from "../content/temp";
+import CardSwiper from "../../content/Cards/KippoCardSwiper";
 
-const TestDemo = () => {
+const KippoCardSwiperDemo = () => {
   return (
     <>
       <div className="demo-box">
         <div className="preview-box d-flex justify-content-center gap-3 p-[150px]">
-          <KippoHoverCard/>
+          <CardSwiper/>
         </div>
         <div className="states">
           <h3>Customization</h3>
@@ -27,4 +21,4 @@ const TestDemo = () => {
   );
 };
 
-export default TestDemo;
+export default KippoCardSwiperDemo;

@@ -14,14 +14,18 @@ const Testimonials = {
 
   
   const FormElements = {
-    "action-button": () => import("../Demo/FormElements/ActionButtonDemo")
+    "action-button": () => import("../Demo/FormElements/ActionButtonDemo"),
+    "full-screen-navbar": () => import("../Demo/FormElements/FullScreenNavbarDemo")
   }
 
   const Cards = {
     "feature-cards": () => import("../Demo/Cards/FeatureCardsDemo"),
     "flip-gallery": () => import("../Demo/Cards/FlipGalleryDemo"),
     "card-stack": () => import("../Demo/Cards/CardStackDemo"),
-    "canvas-card": () => import("../Demo/Cards/CanvasCardDemo")
+    "canvas-card": () => import("../Demo/Cards/CanvasCardDemo"),
+    "magic-wand-reveal": () => import("../Demo/Cards/MagicWandRevealDemo"),
+    "instagram-carousel": () => import("../Demo/Cards/InstagramCarouselDemo"),
+    "kippo-card-swiper": () => import("../Demo/Cards/KippoCardSwiperDemo")
   }
 
   const TextAnimation = {

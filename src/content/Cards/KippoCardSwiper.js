@@ -1,15 +1,15 @@
 import React from 'react'
-import img1 from "../assets/images/Dog/dog1.webp"
-import img2 from "../assets/images/Dog/dog2.webp"
-import img3 from "../assets/images/Dog/dog3.webp"
-import img4 from "../assets/images/Dog/dog4.webp"
-import img5 from "../assets/images/Dog/dog5.webp"
-import img6 from "../assets/images/Dog/dog6.webp"
-import img7 from "../assets/images/Dog/dog7.webp"
-import img8 from "../assets/images/Dog/dog8.webp"
-import img9 from "../assets/images/Dog/dog9.webp"
+import img1 from "../../assets/images/Dog/dog1.webp"
+import img2 from "../../assets/images/Dog/dog2.webp"
+import img3 from "../../assets/images/Dog/dog3.webp"
+import img4 from "../../assets/images/Dog/dog4.webp"
+import img5 from "../../assets/images/Dog/dog5.webp"
+import img6 from "../../assets/images/Dog/dog6.webp"
+import img7 from "../../assets/images/Dog/dog7.webp"
+import img8 from "../../assets/images/Dog/dog8.webp"
+import img9 from "../../assets/images/Dog/dog9.webp"
 
-const CardSwiper = () => {
+const KippoCardSwiper = () => {
   return (
     <div className="group relative h-[300px] w-[200px] mx-auto rounded-2xl">
       <div className="absolute top-[75px] z-0 left-[50px] h-[150px] w-[100px] duration-500 group-hover:z-10 bg-pink-400 group-hover:translate-x-64 group-hover:translate-y-40 group-hover:rotate-[20deg] rounded-lg">
@@ -43,4 +43,4 @@ const CardSwiper = () => {
   )
 }
 
-export default CardSwiper
+export default KippoCardSwiper
