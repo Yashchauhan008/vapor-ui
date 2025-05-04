@@ -8,6 +8,8 @@ import spotify from "../../assets/images/appleDockImages/spotify.png";
 import slack from "../../assets/images/appleDockImages/slack.png";
 import figma from "../../assets/images/appleDockImages/figma.png";
 import chrome from "../../assets/images/appleDockImages/chrome.png";
+import PropTable from "../../components/PropTable";
+import DependencyList from "../../components/DependencyList";
 
 // Import the force rerender hook
 const useForceRerender = () => {
@@ -117,6 +119,7 @@ const AppleDockDemo = () => {
     },
   ];
 
+  const deps = ["react","framer-motion"]
   return (
     <>
       <div className="demo-box">
@@ -270,48 +273,12 @@ const AppleDockDemo = () => {
           </div>
 
           <h3 className="text-xl font-medium mb-4">Props</h3>
-          <div className="props-table-wrapper rounded-lg overflow-hidden bg-black mb-6">
-            <table className="props-table w-full border-collapse">
-              <thead>
-                <tr className="border-b border-gray-800">
-                  <th className="p-4 text-left text-gray-500">Property</th>
-                  <th className="p-4 text-left text-gray-500">Type</th>
-                  <th className="p-4 text-left text-gray-500">Default</th>
-                  <th className="p-4 text-left text-gray-500">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {dockProps.map((prop, index) => (
-                  <tr key={index} className="border-b border-gray-800">
-                    <td className="p-4">
-                      <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md">
-                        {prop.property}
-                      </span>
-                    </td>
-                    <td className="p-4 text-gray-400">{prop.type}</td>
-                    <td className="p-4">
-                      <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md">
-                        {prop.default}
-                      </span>
-                    </td>
-                    <td className="p-4 text-gray-300">{prop.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+
+          <PropTable properties={dockProps}/>
 
           <h3 className="text-xl font-medium mb-4">Dependencies</h3>
-          <div className="dep-box rounded-lg p-4">
-            <span>
-              <code className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md mr-2">
-                react
-              </code>
-              <code className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md mr-2">
-                framer-motion
-              </code>
-            </span>
-          </div>
+          <DependencyList deps={deps}/>
+          
         </div>
       </div>
       <style jsx>{`

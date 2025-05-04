@@ -6,6 +6,7 @@ const AuroraTitle = ({
   fontSize = "clamp(3rem, 8vw, 7rem)",
   blur = "1rem",
   animationDuration = 12,
+  fontWeight = "extrabold",  // Added fontWeight prop with a default value
 }) => {
   return (
     <div className="bg-black text-white grid place-items-center text-center relative overflow-hidden">
@@ -61,7 +62,7 @@ const AuroraTitle = ({
 
       <div>
         <h1
-          className="font-extrabold relative tracking-tight"
+          className={`font-${fontWeight} relative tracking-tight`}  // Using fontWeight prop
           style={{ fontSize }}
         >
           {title}

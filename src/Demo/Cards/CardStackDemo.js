@@ -1,10 +1,40 @@
 import React, { useState, useEffect } from "react";
 import img1 from "../../assets/images/ElasticAcordianEmages/human1.webp"
 import CardStack from "../../content/Cards/CardStack";
+import PropsTable from "../../components/PropTable";
+import DependencyList from "../../components/DependencyList";
 
 
 const CardStackDemo = () => {
 
+  const props = [
+    {
+      property: "image",
+      type: "string",
+      default: '"/api/placeholder/400/320"',
+      description: "URL for the card image shown at the top of the card."
+    },
+    {
+      property: "title",
+      type: "string",
+      default: '""',
+      description: "Title text displayed in the details section."
+    },
+    {
+      property: "subtitle",
+      type: "string",
+      default: '""',
+      description: "Subtitle text shown below the title in a smaller green font."
+    },
+    {
+      property: "cardNumber",
+      type: "string",
+      default: '"#"',
+      description: "Large number or identifier shown on hover in the center of card."
+    }
+  ];
+  
+const deps = ["react"]
   
   return (
     <>
@@ -23,12 +53,14 @@ const CardStackDemo = () => {
     </div>
         </div>
         <div className="states">
-          <h3>Customization</h3>
+          {/* <h3>Customization</h3>
           <div className="customization-box">
             <div className="customization-item"></div>
-          </div>
+          </div> */}
           <h3>Props</h3>
+          <PropsTable properties={props}/>
           <h3>Dependencies</h3>
+          <DependencyList deps={deps}/>
         </div>
       </div>
     </>

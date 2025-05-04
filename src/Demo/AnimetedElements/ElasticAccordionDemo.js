@@ -5,6 +5,8 @@ import human2 from "../../assets/images/ElasticAcordianEmages/human2.webp";
 import human3 from "../../assets/images/ElasticAcordianEmages/human1.webp";
 import human4 from "../../assets/images/ElasticAcordianEmages/human4.webp";
 import useForceUpdate from "../../hooks/useForceUpdate";
+import PropsTable from "../../components/PropTable";
+import DependencyList from "../../components/DependencyList";
 
 const ElasticAccordionDemo = () => {
   const images = [human1, human2, human3, human4];
@@ -15,6 +17,48 @@ const ElasticAccordionDemo = () => {
   const [collapseEase, setCollapseEase] = useState("40");
   const forceUpdate = useForceUpdate();
 
+
+  const props = [
+    {
+      property: "images",
+      type: "string[]",
+      default: "[]",
+      description: "An array of image URLs or imports to be displayed in the accordion."
+    },
+    {
+      property: "defaultWidth",
+      type: "string (CSS width - e.g. '10vw')",
+      default: "'10vw'",
+      description: "Width of each accordion item when collapsed."
+    },
+    {
+      property: "expandedWidth",
+      type: "string (CSS width - e.g. '35vw')",
+      default: "'35vw'",
+      description: "Width of the hovered/expanded accordion item."
+    },
+    {
+      property: "height",
+      type: "string (CSS height - e.g. '60vh')",
+      default: "'60vh'",
+      description: "Total height of the accordion component."
+    },
+    {
+      property: "expandEase",
+      type: "string | number",
+      default: "'50'",
+      description: "Animation easing speed when an item expands."
+    },
+    {
+      property: "collapseEase",
+      type: "string | number",
+      default: "'40'",
+      description: "Animation easing speed when an item collapses."
+    }
+  ];
+
+  const deps = ["react", "gsap"]
+  
   return (
     <div className="demo-box">
       <div className="preview-box" style={{ paddingTop: "70px" }}>
@@ -115,7 +159,9 @@ const ElasticAccordionDemo = () => {
           />
         </div>
         <h3>Props</h3>
+        <PropsTable properties={props}/>
         <h3>Dependencies</h3>
+        <DependencyList deps={deps}/>
       </div>
     </div>
   );

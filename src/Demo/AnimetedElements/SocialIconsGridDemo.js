@@ -4,9 +4,46 @@ import img2 from "../../assets/images/appleDockImages/spotify.png"
 import img3 from "../../assets/images/appleDockImages/figma.png"
 import img4 from "../../assets/images/appleDockImages/connection.png"
 import SocialIconsGrid from "../../content/AnimatedElements/SocialIconsGrid";
+import PropsTable from "../../components/PropTable";
+import DependencyList from "../../components/DependencyList";
 
 
 const SocialIconsGridDemo = () => {
+
+  const props = [
+    {
+      property: "x",
+      type: "number",
+      default: "10",
+      description: "Number of columns in the icon grid."
+    },
+    {
+      property: "y",
+      type: "number",
+      default: "10",
+      description: "Number of rows in the icon grid."
+    },
+    {
+      property: "blockHeight",
+      type: "number (pixels)",
+      default: "50",
+      description: "Height of each individual grid block."
+    },
+    {
+      property: "blockWidth",
+      type: "number (pixels)",
+      default: "50",
+      description: "Width of each individual grid block."
+    },
+    {
+      property: "iconImages",
+      type: "Array<{ src: string, title: string }>",
+      default: "[]",
+      description: "Array of image objects used to randomly populate the grid. Each object should have `src` (image URL) and `title` (for tooltip/alt text)."
+    }
+  ];
+
+  const deps = ["react"]
 
   
   return (
@@ -52,12 +89,10 @@ const SocialIconsGridDemo = () => {
     </div>
         </div>
         <div className="states">
-          <h3>Customization</h3>
-          <div className="customization-box">
-            <div className="customization-item"></div>
-          </div>
           <h3>Props</h3>
+          <PropsTable properties={props}/>
           <h3>Dependencies</h3>
+          <DependencyList deps={deps}/>
         </div>
       </div>
     </>

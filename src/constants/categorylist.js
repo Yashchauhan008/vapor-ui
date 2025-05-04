@@ -23,6 +23,19 @@ export const CATEGORIES = [
     ]
   },
   {
+    name: 'Text Animation',
+    subcategories: [
+      'Aurora Title',
+    ]
+  },
+  {
+    name: 'Form Elements',
+    subcategories: [
+      'Action Button',
+      'Full Screen Navbar'
+    ]
+  },
+  {
     name: 'Cards',
     subcategories: [
       'Feature Cards',
@@ -38,19 +51,6 @@ export const CATEGORIES = [
     name: 'Testimonials',
     subcategories: [
       'Testimonial Carousel',
-    ]
-  },
-  {
-    name: 'Form Elements',
-    subcategories: [
-      'Action Button',
-      'Full Screen Navbar'
-    ]
-  },
-  {
-    name: 'Text Animation',
-    subcategories: [
-      'Aurora Title',
     ]
   },
   {

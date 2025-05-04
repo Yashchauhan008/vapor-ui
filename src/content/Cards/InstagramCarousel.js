@@ -1,16 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import img from "../../assets/images/ElasticAcordianEmages/human1.webp"
-import imgg from "../../assets/images/ElasticAcordianEmages/human2.webp"
 
 const InstagramCarousel = ({ 
-  profileImage = imgg, 
+  profileImage = "", 
   username = "Buster", 
   isVerified = true, 
   images = [
-    img,
-    img,
-    img,
-    img
+    "",
+    "",
+    "",
+    ""
   ],
   likes = 3802,
   caption = "Getting ready to paw-ty! 🎉🐾",
