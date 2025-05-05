@@ -29,7 +29,10 @@ const Testimonials = {
   }
 
   const TextAnimation = {
-    "aurora-title": () => import("../Demo/TextAnimation/AuroraTitleDemo")
+    "aurora-title": () => import("../Demo/TextAnimation/AuroraTitleDemo"),
+    "text-fade-reveal": () => import("../Demo/TextAnimation/TextFadeRevealDemo"),
+    "text-slide-reveal": () => import("../Demo/TextAnimation/TextSlideRevealDemo"),
+    "text-wave-reveal": () => import("../Demo/TextAnimation/TextWaveRevealDemo")
   }
   
   const Testing = {

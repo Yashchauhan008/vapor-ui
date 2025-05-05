@@ -1,18 +1,41 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../assets/images/extra/hero.webp";
-import CanvasCard from "../content/temp";
-import FullScreenNavbar from "../content/temp";
-import MagicWandReveal from "../content/temp";
-import GlassmorphismInteractive from "../content/temp";
-import GlowTag from "../content/temp";
-import KippoHoverCard from "../content/temp";
 
 const TestDemo = () => {
   return (
     <>
       <div className="demo-box">
         <div className="preview-box d-flex justify-content-center gap-3 p-[150px]">
-          <KippoHoverCard/>
+        <div className="space-y-32 p-8">
+      
+      {/* <TextFadeReveal containerClassName="text-3xl font-bold">
+        Simple fade in text reveal
+        Simple fade in text reveal
+        Simple fade in text reveal
+        Simple fade in text reveal
+        Simple fade in text reveal
+        Simple fade in text reveal
+        Simple fade in text reveal
+        Simple fade in text reveal
+      </TextFadeReveal> */}
+      
+      {/* <TextSlideReveal containerClassName="text-3xl font-bold text-white">
+        Text slides in from the side
+        Text slides in from the side
+        Text slides in from the side
+        Text slides in from the side
+      </TextSlideReveal> */}
+      
+      {/* <TextWaveReveal containerClassName="text-3xl font-bold">
+        Text with wave effect animation
+        Text with wave effect animation
+        Text with wave effect animation
+        Text with wave effect animation
+        Text with wave effect animation
+        Text with wave effect animation
+        Text with wave effect animation
+        Text with wave effect animation
+      </TextWaveReveal> */}
+    </div>
         </div>
         <div className="states">
           <h3>Customization</h3>

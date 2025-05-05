@@ -26,6 +26,9 @@ export const CATEGORIES = [
     name: 'Text Animation',
     subcategories: [
       'Aurora Title',
+      'Text Fade Reveal',
+      'Text Slide Reveal',
+      'Text Wave Reveal'
     ]
   },
   {

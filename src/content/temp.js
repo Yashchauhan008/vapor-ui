@@ -1,46 +1,316 @@
-import React from 'react'
-import img1 from "../assets/images/Dog/dog1.webp"
-import img2 from "../assets/images/Dog/dog2.webp"
-import img3 from "../assets/images/Dog/dog3.webp"
-import img4 from "../assets/images/Dog/dog4.webp"
-import img5 from "../assets/images/Dog/dog5.webp"
-import img6 from "../assets/images/Dog/dog6.webp"
-import img7 from "../assets/images/Dog/dog7.webp"
-import img8 from "../assets/images/Dog/dog8.webp"
-import img9 from "../assets/images/Dog/dog9.webp"
+import { useEffect, useMemo, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const CardSwiper = () => {
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
+// 1. Text Float Up Animation (similar to the example)
+export const TextFloatReveal = ({
+  children,
+  scrollContainerRef,
+  containerClassName = "",
+  textClassName = "",
+  animationDuration = 1,
+  ease = "back.inOut(2)",
+  scrollStart = "center bottom+=50%",
+  scrollEnd = "bottom bottom-=40%",
+  stagger = 0.03
+}) => {
+  const containerRef = useRef(null);
+  
+  const splitText = useMemo(() => {
+    const text = typeof children === "string" ? children : "";
+    return text.split("").map((char, index) => (
+      <span className="inline-block" key={index}>
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  }, [children]);
+  
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    
+    const scroller = scrollContainerRef?.current || window;
+    const charElements = el.querySelectorAll(".inline-block");
+    
+    gsap.fromTo(
+      charElements,
+      {
+        willChange: "opacity, transform",
+        opacity: 0,
+        yPercent: 120,
+        scaleY: 2.3,
+        scaleX: 0.7,
+        transformOrigin: "50% 0%"
+      },
+      {
+        duration: animationDuration,
+        ease: ease,
+        opacity: 1,
+        yPercent: 0,
+        scaleY: 1,
+        scaleX: 1,
+        stagger: stagger,
+        scrollTrigger: {
+          trigger: el,
+          scroller,
+          start: scrollStart,
+          end: scrollEnd,
+          scrub: true
+        },
+      }
+    );
+    
+    // Cleanup function
+    return () => {
+      const scrollTrigger = ScrollTrigger.getById(el);
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
+    };
+  }, [
+    scrollContainerRef,
+    animationDuration,
+    ease,
+    scrollStart,
+    scrollEnd,
+    stagger
+  ]);
+  
   return (
-    <div className="group relative h-[300px] w-[200px] mx-auto rounded-2xl">
-      <div className="absolute top-[75px] z-0 left-[50px] h-[150px] w-[100px] duration-500 group-hover:z-10 bg-pink-400 group-hover:translate-x-64 group-hover:translate-y-40 group-hover:rotate-[20deg] rounded-lg">
-        <img src={img1} alt='Card 5' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-[75px] z-0 left-[50px] h-[150px] w-[100px] duration-500 group-hover:z-10 bg-yellow-200 group-hover:translate-x-64 group-hover:-translate-y-40 group-hover:rotate-[20deg] rounded-lg">
-        <img src={img2} alt='Card 6' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-[75px] z-0 left-[50px] h-[150px] w-[100px] duration-500 group-hover:z-10 bg-green-400 group-hover:-translate-x-64 group-hover:translate-y-40 group-hover:-rotate-[30deg] rounded-lg">
-        <img src={img3} alt='Card 7' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-[75px] z-0 left-[50px] h-[150px] w-[100px] duration-500 group-hover:z-10 bg-blue-600 group-hover:-translate-x-64 group-hover:-translate-y-40 group-hover:-rotate-[20deg] rounded-lg">
-        <img src={img4} alt='Card 8' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-0 z-0 left-0 h-[300px] w-[200px] rounded-2xl -rotate-12 group-hover:-rotate-12 group-hover:-translate-x-60 group-hover:translate-y-10 duration-500">
-        <img src={img5} alt='Card 1' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-0 z-0 left-0 h-[300px] w-[200px] rounded-2xl  -rotate-6 group-hover:-rotate-6 group-hover:-translate-x-32 group-hover:translate-y-5 duration-500">
-        <img src={img6} alt='Card 2' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-0 z-0 left-0 h-[300px] w-[200px] rounded-2xl rotate-0 group-hover:rotate-0 group-hover:-translate-x-0 group-hover:translate-y-2 duration-500">
-        <img src={img7} alt='Card 2' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-0 z-0 left-0 h-[300px] w-[200px] rounded-2xl rotate-6 group-hover:rotate-6 group-hover:translate-x-32 group-hover:translate-y-5 duration-500">
-        <img src={img8} alt='Card 3' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
-      <div className="absolute top-0 z-0 left-0 h-[300px] w-[200px] rounded-2xl rotate-12 group-hover:rotate-12 group-hover:translate-x-60 group-hover:translate-y-10 duration-500">
-        <img src={img9} alt='Card 4' className="h-full w-full object-cover rounded-lg shadow-md" />
-      </div>
+    <div
+      ref={containerRef}
+      className={`overflow-hidden ${containerClassName}`}
+    >
+      <span className={`inline-block ${textClassName}`}>
+        {splitText}
+      </span>
     </div>
-  )
-}
+  );
+};
 
-export default CardSwiper
+// 2. Text Fade In Animation
+export const TextFadeReveal = ({
+  children,
+  scrollContainerRef,
+  containerClassName = "",
+  textClassName = "",
+  animationDuration = 0.8,
+  ease = "power3.out",
+  scrollStart = "top bottom-=10%",
+  stagger = 0.02
+}) => {
+  const containerRef = useRef(null);
+  
+  const splitText = useMemo(() => {
+    const text = typeof children === "string" ? children : "";
+    return text.split("").map((char, index) => (
+      <span className="inline-block" key={index}>
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  }, [children]);
+  
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    
+    const charElements = el.querySelectorAll(".inline-block");
+    
+    gsap.fromTo(
+      charElements,
+      {
+        opacity: 0
+      },
+      {
+        duration: animationDuration,
+        ease: ease,
+        opacity: 1,
+        stagger: stagger,
+        scrollTrigger: {
+          trigger: el,
+          start: scrollStart
+        }
+      }
+    );
+    
+    return () => {
+      const scrollTrigger = ScrollTrigger.getById(el);
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
+    };
+  }, [
+    scrollContainerRef,
+    animationDuration,
+    ease,
+    scrollStart,
+    stagger
+  ]);
+  
+  return (
+    <div
+      ref={containerRef}
+      className={`overflow-hidden ${containerClassName}`}
+    >
+      <span className={`inline-block ${textClassName}`}>
+        {splitText}
+      </span>
+    </div>
+  );
+};
+
+// 3. Text Slide In Animation
+export const TextSlideReveal = ({
+  children,
+  direction = "right", // "right" or "left"
+  scrollContainerRef,
+  containerClassName = "",
+  textClassName = "",
+  animationDuration = 0.8,
+  ease = "power3.out",
+  scrollStart = "top bottom-=10%",
+  stagger = 0.02
+}) => {
+  const containerRef = useRef(null);
+  
+  const splitText = useMemo(() => {
+    const text = typeof children === "string" ? children : "";
+    return text.split("").map((char, index) => (
+      <span className="inline-block" key={index}>
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  }, [children]);
+  
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    
+    const charElements = el.querySelectorAll(".inline-block");
+    
+    gsap.fromTo(
+      charElements,
+      {
+        opacity: 0,
+        x: direction === "right" ? -20 : 20
+      },
+      {
+        duration: animationDuration,
+        ease: ease,
+        opacity: 1,
+        x: 0,
+        stagger: stagger,
+        scrollTrigger: {
+          trigger: el,
+          start: scrollStart
+        }
+      }
+    );
+    
+    return () => {
+      const scrollTrigger = ScrollTrigger.getById(el);
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
+    };
+  }, [
+    direction,
+    scrollContainerRef,
+    animationDuration,
+    ease,
+    scrollStart,
+    stagger
+  ]);
+  
+  return (
+    <div
+      ref={containerRef}
+      className={`overflow-hidden ${containerClassName}`}
+    >
+      <span className={`inline-block ${textClassName}`}>
+        {splitText}
+      </span>
+    </div>
+  );
+};
+
+// 4. Text Wave Animation
+export const TextWaveReveal = ({
+  children,
+  scrollContainerRef,
+  containerClassName = "",
+  textClassName = "",
+  animationDuration = 0.8,
+  ease = "elastic.out(1,0.3)",
+  scrollStart = "top bottom-=10%",
+  stagger = 0.03,
+  waveHeight = 20
+}) => {
+  const containerRef = useRef(null);
+  
+  const splitText = useMemo(() => {
+    const text = typeof children === "string" ? children : "";
+    return text.split("").map((char, index) => (
+      <span className="inline-block" key={index}>
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  }, [children]);
+  
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    
+    const charElements = el.querySelectorAll(".inline-block");
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: scrollStart
+      }
+    });
+    
+    // First set all characters to invisible
+    tl.set(charElements, { opacity: 0, y: waveHeight });
+    
+    // Then animate each character with a wave effect
+    tl.to(charElements, {
+      duration: animationDuration,
+      opacity: 1,
+      y: 0,
+      ease: ease,
+      stagger: stagger
+    });
+    
+    return () => {
+      const scrollTrigger = ScrollTrigger.getById(el);
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
+      tl.kill();
+    };
+  }, [
+    scrollContainerRef,
+    animationDuration,
+    ease,
+    scrollStart,
+    stagger,
+    waveHeight
+  ]);
+  
+  return (
+    <div
+      ref={containerRef}
+      className={`overflow-hidden ${containerClassName}`}
+    >
+      <span className={`inline-block ${textClassName}`}>
+        {splitText}
+      </span>
+    </div>
+  );
+};
+
+// Example usage 
