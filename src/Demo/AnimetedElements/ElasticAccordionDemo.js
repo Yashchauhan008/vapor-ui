@@ -74,90 +74,117 @@ const ElasticAccordionDemo = () => {
       </div>
       <div className="states">
         <h3>Customization</h3>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Default Width : {defaultWidth}
+        
+        <div className="customization-item">
+          <label className="block text-gray-300 mb-2">
+            Default Width
           </label>
-          <input
-            type="range"
-            min="1"
-            max="50"
-            className="range1"
-            value={parseInt(defaultWidth.replace("vw", ""))}
-            onChange={(e) => {
-              setDefaultWidth(e.target.value + "vw");
-              forceUpdate.update();
-            }}
-          />
+          <div className="flex items-center">
+            <input
+              type="range"
+              min="1"
+              max="50"
+              value={parseInt(defaultWidth.replace("vw", ""))}
+              onChange={(e) => {
+                setDefaultWidth(e.target.value + "vw");
+                forceUpdate.update();
+              }}
+              className="w-full mr-3 range1"
+            />
+            <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md min-w-8 text-center">
+              {parseInt(defaultWidth.replace("vw", ""))}
+            </span>
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Expanded Width : {expandedWidth}
+        <div className="customization-item">
+          <label className="block text-gray-300 mb-2">
+            Expanded Width
           </label>
-          <input
-            type="range"
-            min="1"
-            max="70"
-            value={parseInt(expandedWidth.replace("vw", ""))}
-            onChange={(e) => {
-              setExpandedWidth(e.target.value + "vw");
-              forceUpdate.update();
-            }}
-            className="range1"
-          />
+          <div className="flex items-center">
+            <input
+              type="range"
+              min="1"
+              max="70"
+              value={parseInt(expandedWidth.replace("vw", ""))}
+              onChange={(e) => {
+                setExpandedWidth(e.target.value + "vw");
+                forceUpdate.update();
+              }}
+              className="w-full mr-3 range1"
+            />
+            <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md min-w-8 text-center">
+              {parseInt(expandedWidth.replace("vw", ""))}
+            </span>
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Height : {height}
+        <div className="customization-item">
+          <label className="block text-gray-300 mb-2">
+            Height
           </label>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value={parseInt(height.replace("vh", ""))}
-            onChange={(e) => {
-              setHeight(e.target.value + "vh");
-              forceUpdate.update();
-            }}
-            className="range1"
-          />
+          <div className="flex items-center">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value={parseInt(height.replace("vh", ""))}
+              onChange={(e) => {
+                setHeight(e.target.value + "vh");
+                forceUpdate.update();
+              }}
+              className="w-full mr-3 range1"
+            />
+            <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md min-w-8 text-center">
+              {parseInt(height.replace("vh", ""))}
+            </span>
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Expand Ease : {expandEase}
+        <div className="customization-item">
+          <label className="block text-gray-300 mb-2">
+            Expand Ease
           </label>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value={expandEase}
-            onChange={(e) => {
-              setExpandEase(e.target.value);
-              forceUpdate.update();
-            }}
-            className="range1"
-          />
+          <div className="flex items-center">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value={expandEase}
+              onChange={(e) => {
+                setExpandEase(e.target.value);
+                forceUpdate.update();
+              }}
+              className="w-full mr-3 range1"
+            />
+            <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md min-w-8 text-center">
+              {expandEase}
+            </span>
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Collapse Ease : {collapseEase}
+        <div className="customization-item">
+          <label className="block text-gray-300 mb-2">
+            Collapse Ease
           </label>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value={collapseEase}
-            onChange={(e) => {
-              setCollapseEase(e.target.value);
-              forceUpdate.update();
-            }}
-            className="range1"
-          />
+          <div className="flex items-center">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value={collapseEase}
+              onChange={(e) => {
+                setCollapseEase(e.target.value);
+                forceUpdate.update();
+              }}
+              className="w-full mr-3 range1"
+            />
+            <span className="bg-gray-800 text-white text-sm py-1 px-3 rounded-md min-w-8 text-center">
+              {collapseEase}
+            </span>
+          </div>
         </div>
+        
         <h3>Props</h3>
         <PropsTable properties={props}/>
         <h3>Dependencies</h3>
