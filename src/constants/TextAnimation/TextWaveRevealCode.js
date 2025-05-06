@@ -11,7 +11,7 @@ export const TextWaveRevealCode= {
     stagger={0.04}
     waveHeight={25}
 >
-  {paragraphText}
+  That is not simply a yes; it is always YASH.
 </TextWaveReveal>`,
     code:`import { useEffect, useMemo, useRef } from "react";
 import { gsap } from "gsap";

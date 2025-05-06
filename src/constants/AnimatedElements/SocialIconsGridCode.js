@@ -4,38 +4,38 @@ export const SocialIconsGridCode = {
 import img2 from "../../assets/images/appleDockImages/spotify.png";
 import img3 from "../../assets/images/appleDockImages/figma.png";
 import img4 from "../../assets/images/appleDockImages/connection.png";`,
-    parameters:"",
+    parameters:`const iconImages = [
+  {
+    id: "twitter",
+    title: "Follow on Twitter",
+    activeColor: "#1DA1F2",
+    src: img1,
+  },
+  {
+    id: "linkedin",
+    title: "Connect on LinkedIn",
+    activeColor: "#0A66C2",
+    src: img2,
+  },
+  {
+    id: "youtube",
+    title: "Subscribe on YouTube",
+    activeColor: "#FF0000",
+    src: img3,
+  },
+  {
+    id: "connection",
+    title: "Subscribe on YouTube",
+    activeColor: "#FF0000",
+    src: img4,
+  },
+]`,
     usage:`<SocialIconsGrid
     x={10}
     y={20}
     containerWidth={500}
     containerHeight={500}
-    iconImages={[
-      {
-        id: "twitter",
-        title: "Follow on Twitter",
-        activeColor: "#1DA1F2",
-        src: img1,
-      },
-      {
-        id: "linkedin",
-        title: "Connect on LinkedIn",
-        activeColor: "#0A66C2",
-        src: img2,
-      },
-      {
-        id: "youtube",
-        title: "Subscribe on YouTube",
-        activeColor: "#FF0000",
-        src: img3,
-      },
-      {
-        id: "connection",
-        title: "Subscribe on YouTube",
-        activeColor: "#FF0000",
-        src: img4,
-      },
-    ]}
+    iconImages={iconImages}
 />`,
     code:`import React, { useState, useEffect } from 'react';
 

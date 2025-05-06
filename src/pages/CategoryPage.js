@@ -1,15 +1,24 @@
-import { useEffect, useRef, Suspense, lazy, useState, React } from 'react';
+import { useEffect, useRef, Suspense, lazy, useState, React } from "react";
 import { useParams } from "react-router-dom";
 import CodeTab from "../components/CodeTab";
 import ContributionTab from "../components/ContributionTab";
-// import AnimatedContentDemo from "../Demo/AnimatedContentDemo"
 import { componentMap } from "../constants/Components";
-import AnimatedCardGrid from '../content/AnimatedElements/AnimatedCardGrid';
-import TextRevealAnimation from '../content/AnimatedElements/AnimatedCardGrid';
-import OnScrollTextReveal from '../content/AnimatedElements/AnimatedCardGrid';
-import MemoryGame from '../content/temp';
-import img from "../assets/images/ElasticAcordianEmages/human1.webp"
+import img from "../assets/images/ElasticAcordianEmages/human1.webp";
+import SplitText from "../components/SplitText";
+import Loading from "../components/Loading";
 
+// Add CSS for animations
+const fadeInUpKeyframes = `
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}`;
 
 const CategoryPage = () => {
   const { category, subcategory } = useParams();
@@ -17,23 +26,14 @@ const CategoryPage = () => {
   const [content, setContent] = useState("Preview");
   const [demoName, setDemoName] = useState("");
   const [DynamicComponent, setDynamicComponent] = useState(null);
+  // Add a key state that will change when route params change
+  const [animationKey, setAnimationKey] = useState(0);
 
-
-  const cardImages = [
-    img,
-    img,
-    img,
-    img,
-    img,
-    img,
-    img,
-    img
-  ];
-
+  const cardImages = [img, img, img, img, img, img, img, img];
 
   useEffect(() => {
     setDemoName(convertToPascalCaseWithDemo(subcategory));
-    
+
     // Reset and load the new component when subcategory changes
     if (subcategory && componentMap[subcategory]) {
       const loadComponent = async () => {
@@ -46,31 +46,95 @@ const CategoryPage = () => {
           setDynamicComponent(null);
         }
       };
-      
+
       loadComponent();
     } else {
       setDynamicComponent(null);
     }
-  }, [subcategory]);
+    
+    // Force re-animation by updating the key when category or subcategory changes
+    setAnimationKey(prevKey => prevKey + 1);
+  }, [subcategory, category]);
 
   function convertToPascalCaseWithDemo(str) {
     if (!str) return "";
-    return `<${str.split('-') // Split by hyphen
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
-        .join('') + 'Demo'}/>`; // Join and append 'Demo'
+    return `<${
+      str
+        .split("-") // Split by hyphen
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+        .join("") + "Demo"
+    }/>`; // Join and append 'Demo'
   }
 
+  function formatTitle(text) {
+    return text
+      .replace(/-/g, ' ') // Replace hyphens with spaces
+      .split(' ') // Split into words
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each
+      .join(' '); // Join them back
+  }
 
+  const category0 = formatTitle(category);
+  const subcategory0 = formatTitle(subcategory);
+
+  // Add keyframes to the document
+  useEffect(() => {
+    // Create style element for keyframes if it doesn't exist
+    if (!document.getElementById('fadeInUpKeyframes')) {
+      const styleElement = document.createElement('style');
+      styleElement.id = 'fadeInUpKeyframes';
+      styleElement.innerHTML = fadeInUpKeyframes;
+      document.head.appendChild(styleElement);
+      
+      return () => {
+        // Clean up when component unmounts
+        const element = document.getElementById('fadeInUpKeyframes');
+        if (element) element.remove();
+      };
+    }
+  }, []);
 
   return (
     <div className="category-page">
-      <h2>{category.replace("-", " ")}</h2>
-      <h3>{subcategory.replace("-", " ")}</h3>
-      <div className="preview-btn-list">
+      <SplitText
+        key={`category-${animationKey}`}
+        text={category0}
+        className="text-[20px] font-[100] leading-[15px] mt-[10px] pl-[5px] font-[Rubic]"
+        delay={150}
+        animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+        animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+        easing="easeOutCubic"
+        threshold={0.1}
+        rootMargin="-50px"
+      />
+      <br />
+      <br />
+      <br />
+      <SplitText
+        key={`subcategory-${animationKey}`}
+        text={subcategory0}
+        className="text-[75px] font-[100] leading-[15px] mt-[0px] font-[Rubic]"
+        delay={150}
+        animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+        animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+        easing="easeOutCubic"
+        threshold={0.2}
+        rootMargin="-50px"
+      />
+      {/* <h2>{category.replace("-", " ")}</h2> */}
+      {/* <h3>{subcategory.replace("-", " ")}</h3> */}
+      <div className="preview-btn-list z-0">
         <button
-          className="btn1"
+          key={`preview-btn-${animationKey}`}
+          className="btn1 animate-fade-in-up"
           onClick={() => {
             setContent("Preview");
+          }}
+          style={{
+            animation: `fadeInUp 0.6s ease forwards`,
+            opacity: 0,
+            transform: 'translateY(100px)',
+            animationDelay: '0.1s'
           }}
         >
           <svg
@@ -92,9 +156,16 @@ const CategoryPage = () => {
           Preview
         </button>
         <button
-          className="btn1"
+          key={`code-btn-${animationKey}`}
+          className="btn1 animate-fade-in-up"
           onClick={() => {
             setContent("Code");
+          }}
+          style={{
+            animation: `fadeInUp 0.6s ease forwards`,
+            opacity: 0,
+            transform: 'translateY(100px)',
+            animationDelay: '0.2s'
           }}
         >
           <svg
@@ -116,9 +187,16 @@ const CategoryPage = () => {
           Code
         </button>
         <button
-          className="btn1"
+          key={`contribute-btn-${animationKey}`}
+          className="btn1 animate-fade-in-up"
           onClick={() => {
             setContent("Contribute");
+          }}
+          style={{
+            animation: `fadeInUp 0.6s ease forwards`,
+            opacity: 0,
+            transform: 'translateY(100px)',
+            animationDelay: '0.3s'
           }}
         >
           <svg
@@ -143,7 +221,7 @@ const CategoryPage = () => {
         {content === "Preview" && (
           <>
             {DynamicComponent ? (
-              <Suspense fallback={<div>Loading component...</div>}>
+              <Suspense fallback={<Loading/>}>
                 <DynamicComponent />
               </Suspense>
             ) : (
@@ -151,13 +229,11 @@ const CategoryPage = () => {
             )}
           </>
         )}
-        {content === "Code" && (
-          <CodeTab/>
-        )}
+        {content === "Code" && <CodeTab />}
         {content === "Contribute" && (
           <>
-         <ContributionTab/>
-    </>
+            <ContributionTab />
+          </>
         )}
       </div>
     </div>

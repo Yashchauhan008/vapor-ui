@@ -2,7 +2,7 @@ import React from 'react'
 
 const KippoCardSwiper = ({ images = [], duration = 500, easing = 'ease-in-out' }) => {
   const transitionStyle = {
-    transitionDuration: `${duration}ms`,
+    transitionDuration: duration+"ms",
     transitionTimingFunction: easing,
   }
 

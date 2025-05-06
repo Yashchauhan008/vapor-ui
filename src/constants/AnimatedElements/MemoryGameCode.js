@@ -2,10 +2,10 @@ export const MemoryGameCode = {
     installation: "",
     imports: "",
     parameters: "",
-    usage: `  <MemoryGame 
-        emojis={['🙈', '🚀', '🐶', '🌈', '🎸', '🍕', '🦄', '🏀']}
-        questionMarkColor="#30c1f2"
-        />`,
+    usage: `<MemoryGame 
+  emojis={['🙈', '🚀', '🐶', '🌈', '🎸', '🍕', '🦄', '🏀']}
+  questionMarkColor="#30c1f2"
+/>`,
     code: `import { useState, useEffect } from 'react';
 
 // Array of emoji pairs for the memory game

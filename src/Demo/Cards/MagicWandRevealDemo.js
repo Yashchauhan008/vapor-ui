@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import MagicWandReveal from "../../content/Cards/MagicWandReveal";
 import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
+import img1 from "../../assets/images/portraits/portrait1.webp"
+import img2 from "../../assets/images/portraits/portrait2.webp"
+import img3 from "../../assets/images/portraits/portrait3.webp"
 
 const MagicWandRevealDemo = () => {
 
@@ -67,7 +70,18 @@ const MagicWandRevealDemo = () => {
     <>
       <div className="demo-box">
         <div className="preview-box d-flex justify-content-center gap-3 p-[150px]">
-        <MagicWandReveal/>
+        <MagicWandReveal
+        imageUrls={[
+          img1,
+          img2,
+          img3
+        ]}
+        wandSize="10vmin"
+        tileSize="38vmin"
+        backgroundColor="rgb(2, 6, 23)"
+        tileBackgroundColor="rgb(31, 41, 55)"
+      />
+
         </div>
         <div className="states">
           {/* <h3>Customization</h3>

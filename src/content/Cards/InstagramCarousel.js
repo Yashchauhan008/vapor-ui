@@ -93,7 +93,7 @@ const InstagramCarousel = ({
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-pink-600 p-0.5">
             <img 
               src={profileImage} 
-              alt={`${username}'s profile`} 
+              alt={username+"'s profile"} 
               className="w-full h-full rounded-full border-2 border-black object-cover"
             />
           </div>
@@ -133,7 +133,7 @@ const InstagramCarousel = ({
             >
               <img
                 src={image}
-                alt={alts[index] || `Image ${index + 1}`}
+                alt={alts[index] || "Image "+index + 1}
                 className="w-full h-full object-cover"
               />
               
@@ -194,9 +194,9 @@ const InstagramCarousel = ({
             {images.map((_, index) => (
               <button
                 key={index}
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${currentSlide === index ? 'bg-blue-500' : 'bg-white/60'}`}
+                className={"w-1.5 h-1.5 rounded-full transition-all duration-200 "+(currentSlide === index ? 'bg-blue-500' : 'bg-white/60')}
                 onClick={() => scrollToImage(index)}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={"Go to slide "+ index + 1}
               />
             ))}
           </div>
@@ -208,7 +208,7 @@ const InstagramCarousel = ({
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center gap-4">
             <button 
-              className={`text-lg transition-transform active:scale-90 ${liked ? 'text-red-500' : 'text-white'}`}
+              className={"text-lg transition-transform active:scale-90 "+(liked ? 'text-red-500' : 'text-white')}
               onClick={handleLike}
             >
               {liked ? (

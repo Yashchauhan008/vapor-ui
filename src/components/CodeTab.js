@@ -70,6 +70,7 @@ const CodeTab = () => {
               item => item && typeof item === 'object' &&
                       (item.installation !== undefined ||
                        item.usage !== undefined ||
+                       item.css !== undefined ||
                        item.parameters !== undefined ||
                        item.imports !== undefined ||
                        item.code !== undefined)
@@ -114,7 +115,7 @@ const CodeTab = () => {
         <ul>
           <li>The component name in the URL is correct</li>
           <li>The component exists in our library</li>
-          <li>The component code has the expected properties (installation, imports, parameters, usage, code)</li>
+          <li>The component code has the expected properties (installation, imports, parameters, usage, css, code)</li>
         </ul>
       </div>
     );
@@ -134,6 +135,7 @@ const CodeTab = () => {
         content === "// Imports examples not available" || 
         content === "// Parameters examples not available" || 
         content === "// Usage examples not available" || 
+        content === "// CSS examples not available" || 
         content === "// Component code not available") {
       return null;
     }
@@ -177,6 +179,7 @@ const CodeTab = () => {
       {renderSection("Parameters", codeContent.parameters, "parameters")}
       {renderSection("Usage", codeContent.usage, "usage")}
       {renderSection("Code", codeContent.code, "code")}
+      {renderSection("CSS", codeContent.css, "css")}
     </div>
   );
 };

@@ -90,7 +90,7 @@ export default function FlipGallery({
     const elements = [topRef, bottomRef];
     elements.forEach(ref => {
       if (ref.current) {
-        ref.current.style.backgroundImage = `url("${url}")`;
+        ref.current.style.backgroundImage = "url(" + url + ")";
       }
     });
   };
@@ -100,7 +100,7 @@ export default function FlipGallery({
     const elements = [overlayTopRef, overlayBottomRef];
     elements.forEach(ref => {
       if (ref.current) {
-        ref.current.style.backgroundImage = `url("${url}")`;
+        ref.current.style.backgroundImage = "url(" + url + ")";
       }
     });
   };
@@ -204,8 +204,8 @@ export default function FlipGallery({
   // Gallery container styles
   const galleryContainerStyle = {
     backgroundColor,
-    border: `1px solid ${borderColor}`,
-    padding: `${padding}px`,
+    border: "1px solid " + borderColor,
+    padding: padding + "px",
     position: 'relative',
     marginBottom: '60px' // Add space for title and buttons
   };
@@ -213,10 +213,10 @@ export default function FlipGallery({
   // Flip gallery styles
   const flipGalleryStyle = {
     position: 'relative',
-    width: `${width}px`,
-    height: `${height}px`,
+    width: width + "px",
+    height: height + "px",
     textAlign: 'center',
-    perspective: `${perspective}px`,
+    perspective: perspective + "px",
   };
   
   // Title styles with improved animation
@@ -225,11 +225,11 @@ export default function FlipGallery({
     color: titleColor,
     fontSize: '0.75rem',
     left: 0,
-    bottom: `-${padding * 4}px`,
+    bottom: "-" + (padding * 4) + "px",
     lineHeight: 2,
     opacity: titleVisible ? 1 : 0,
-    transform: `translateY(${titleVisible ? 0 : '-0.5rem'})`,
-    transition: `opacity 400ms ${easing}, transform 400ms ${easing}`,
+    transform: "translateY(" + (titleVisible ? 0 : '-0.5rem') + ")",
+    transition: "opacity 400ms " + easing + ", transform 400ms " + easing,
     width: '100%',
     textAlign: 'center',
     zIndex: 10
@@ -240,7 +240,7 @@ export default function FlipGallery({
     position: 'absolute',
     backgroundColor: 'black',
     width: '100%',
-    height: `${dividerHeight}px`,
+    height: dividerHeight + "px",
     top: '50%',
     left: 0,
     transform: 'translateY(-50%)',
@@ -254,7 +254,7 @@ export default function FlipGallery({
     height: '50%',
     overflow: 'hidden',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: `${width}px ${height}px`
+    backgroundSize: width + "px " + height + "px"
   };
   
   // Top panel styles
@@ -291,7 +291,7 @@ export default function FlipGallery({
   // Navigation buttons container styles
   const navContainerStyle = {
     position: 'absolute',
-    bottom: `-${padding * 4}px`,
+    bottom: "-" + (padding * 4) + "px",
     right: 0,
     display: 'flex',
     gap: '0.2rem',
@@ -307,7 +307,7 @@ export default function FlipGallery({
     color: navButtonsColor,
     opacity: 0.75,
     fontSize: '1.2rem',
-    transition: `transform 150ms ${easing}, opacity 150ms ${easing}`,
+    transition: "transform 150ms " + easing + ", opacity 150ms " + easing,
     cursor: 'pointer',
     borderRadius: '4px',
     marginLeft: '8px'

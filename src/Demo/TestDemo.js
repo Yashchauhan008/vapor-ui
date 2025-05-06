@@ -5,37 +5,7 @@ const TestDemo = () => {
     <>
       <div className="demo-box">
         <div className="preview-box d-flex justify-content-center gap-3 p-[150px]">
-        <div className="space-y-32 p-8">
-      
-      {/* <TextFadeReveal containerClassName="text-3xl font-bold">
-        Simple fade in text reveal
-        Simple fade in text reveal
-        Simple fade in text reveal
-        Simple fade in text reveal
-        Simple fade in text reveal
-        Simple fade in text reveal
-        Simple fade in text reveal
-        Simple fade in text reveal
-      </TextFadeReveal> */}
-      
-      {/* <TextSlideReveal containerClassName="text-3xl font-bold text-white">
-        Text slides in from the side
-        Text slides in from the side
-        Text slides in from the side
-        Text slides in from the side
-      </TextSlideReveal> */}
-      
-      {/* <TextWaveReveal containerClassName="text-3xl font-bold">
-        Text with wave effect animation
-        Text with wave effect animation
-        Text with wave effect animation
-        Text with wave effect animation
-        Text with wave effect animation
-        Text with wave effect animation
-        Text with wave effect animation
-        Text with wave effect animation
-      </TextWaveReveal> */}
-    </div>
+          {/* <div className="space-y-32 p-8"></div> */}
         </div>
         <div className="states">
           <h3>Customization</h3>

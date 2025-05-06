@@ -7,13 +7,13 @@ const CanvasCard = ({
   title1,
   title2,
   details,
-  gradientFrom = "#FD8944", // Default orange
+  gradientFrom = "#FD8944",
   gradientTo = "#994B17",
 }) => {
   const isLeft = align === "left";
-  const gradientId = `grad-${gradientFrom.slice(1)}-${gradientTo.slice(1)}`;
+  const gradientId = "grad-" + gradientFrom.slice(1) + "-" + gradientTo.slice(1);
   const textGradientStyle = {
-    backgroundImage: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
+    backgroundImage: "linear-gradient(to right, " + gradientFrom + ", " + gradientTo + ")",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
   };
@@ -34,7 +34,7 @@ const CanvasCard = ({
           </defs>
           <rect
             className="stroke-[4] fill-none [stroke-dasharray:2000] [stroke-dashoffset:2000] group-hover:animate-[draw-line_3s_cubic-bezier(0.19,1,0.22,1)_forwards]"
-            stroke={`url(#${gradientId})`}
+            stroke={"url(#" + gradientId + ")"}
             width="100%"
             height="100%"
           />
@@ -52,9 +52,11 @@ const CanvasCard = ({
 
       {/* Text Content */}
       <div
-        className={`absolute bottom-0 ${
-          isLeft ? "-left-[25%]" : "left-[85%]"
-        } uppercase z-10`}
+        className={
+          "absolute bottom-0 " + 
+          (isLeft ? "-left-[25%]" : "left-[85%]") + 
+          " uppercase z-10"
+        }
       >
         <span
           className="block absolute left-0 top-2 text-xl font-white rotate-[270deg] -translate-y-full -translate-x-[calc(100%+80px)] origin-top-left opacity-0 transition-all duration-700 delay-[350ms] group-hover:translate-x-[-00%] group-hover:opacity-100 bg-clip-text text-transparent"
@@ -78,12 +80,7 @@ const CanvasCard = ({
 
       {/* Keyframes */}
       <style>
-        {`
-          @keyframes draw-line {
-            from { stroke-dashoffset: 2000; }
-            to { stroke-dashoffset: 0; }
-          }
-        `}
+        {"@keyframes draw-line { from { stroke-dashoffset: 2000; } to { stroke-dashoffset: 0; } }"}
       </style>
     </a>
   );

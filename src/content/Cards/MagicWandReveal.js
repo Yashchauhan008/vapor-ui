@@ -25,8 +25,8 @@ export default function MagicWandReveal({
     // Initialize wand position to center of container
     if (containerRef.current && wandRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
-      wandRef.current.style.left = `${rect.width / 2}px`;
-      wandRef.current.style.top = `${rect.height / 2}px`;
+      wandRef.current.style.left = rect.width / 2+"px";
+      wandRef.current.style.top = rect.height / 2+"px";
     }
   }, []);
 
@@ -56,9 +56,9 @@ export default function MagicWandReveal({
     
     // Update wand styles relative to container
     if (wandRef.current) {
-      wandRef.current.style.left = `${mouse.modifiedPosition.x}px`;
-      wandRef.current.style.top = `${mouse.modifiedPosition.y}px`;
-      wandRef.current.style.rotate = `${mouse.decimal.x * 20 - 10}deg`;
+      wandRef.current.style.left = mouse.modifiedPosition.x+"px";
+      wandRef.current.style.top = mouse.modifiedPosition.y+"px";
+      wandRef.current.style.rotate = mouse.decimal.x * 20 - 10+"deg";
     }
     
     // Reveal images based on mouse position
@@ -137,7 +137,7 @@ export default function MagicWandReveal({
             </svg>
             <img 
               src={url} 
-              alt={`Image ${index + 1}`}
+              alt={"Image "+index + 1}
               className="absolute left-0 top-0 h-full"
               style={{ 
                 aspectRatio: "1", 

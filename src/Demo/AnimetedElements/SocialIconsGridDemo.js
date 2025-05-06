@@ -8,6 +8,34 @@ import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
 
 const SocialIconsGridDemo = () => {
+
+  const iconImages = [
+    {
+      id: "twitter",
+      title: "Follow on Twitter",
+      activeColor: "#1DA1F2",
+      src: img1,
+    },
+    {
+      id: "linkedin",
+      title: "Connect on LinkedIn",
+      activeColor: "#0A66C2",
+      src: img2,
+    },
+    {
+      id: "youtube",
+      title: "Subscribe on YouTube",
+      activeColor: "#FF0000",
+      src: img3,
+    },
+    {
+      id: "connection",
+      title: "Subscribe on YouTube",
+      activeColor: "#FF0000",
+      src: img4,
+    },
+  ]
+
   const props = [
     {
       property: "x",
@@ -52,35 +80,10 @@ const SocialIconsGridDemo = () => {
             <h1 className="text-center">
               <SocialIconsGrid
                 x={10}
-                y={20}
+                y={10}
                 containerWidth={500}
                 containerHeight={500}
-                iconImages={[
-                  {
-                    id: "twitter",
-                    title: "Follow on Twitter",
-                    activeColor: "#1DA1F2",
-                    src: img1,
-                  },
-                  {
-                    id: "linkedin",
-                    title: "Connect on LinkedIn",
-                    activeColor: "#0A66C2",
-                    src: img2,
-                  },
-                  {
-                    id: "youtube",
-                    title: "Subscribe on YouTube",
-                    activeColor: "#FF0000",
-                    src: img3,
-                  },
-                  {
-                    id: "connection",
-                    title: "Subscribe on YouTube",
-                    activeColor: "#FF0000",
-                    src: img4,
-                  },
-                ]}
+                iconImages={iconImages}
               />
             </h1>
           </div>

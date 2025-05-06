@@ -11,7 +11,7 @@ export const TextSlideRevealCode= {
     scrollStart="top 90%"
     stagger={0.03}
 >
-    {paragraphText}
+    That is not simply a yes; it is always YASH.
 </TextSlideReveal>`,
     code:`import { useEffect, useMemo, useRef } from "react";
 import { gsap } from "gsap";

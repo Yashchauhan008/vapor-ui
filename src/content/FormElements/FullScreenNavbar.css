@@ -1,0 +1,69 @@
+/* Dynamic styles for nav items */
+.nav-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hover-color, #ff0047);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+    z-index: 0;
+  }
+  
+  .nav-item:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  
+  /* Text animation styles */
+  .nav-link span {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .nav-item:hover .nav-link span {
+    transform: translateY(-100%);
+  }
+  
+  /* Menu toggle button styles */
+  .menu-toggle {
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 50;
+  }
+  
+  .menu-toggle div {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .menu-toggle.active div:nth-child(1) {
+    transform: rotate(45deg) translateY(14px);
+  }
+  
+  .menu-toggle.active div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-14px);
+  }
+  
+  /* Navigation items container */
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  /* Fallback background for when custom hover color is not set */
+  .hover-bg {
+    background-color: #ff0047;
+  }
