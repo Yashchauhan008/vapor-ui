@@ -6,7 +6,6 @@
     "@chakra-ui/react": "^3.13.0",
     "@emotion/react": "^11.14.0",
     "@formkit/auto-animate": "^0.8.2",
-    "@react-spring/web": "^9.7.5",
     "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.1.2",
     "@testing-library/dom": "^10.4.0",

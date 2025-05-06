@@ -4,8 +4,8 @@ import CodeTab from "../components/CodeTab";
 import ContributionTab from "../components/ContributionTab";
 import { componentMap } from "../constants/Components";
 import img from "../assets/images/ElasticAcordianEmages/human1.webp";
-import SplitText from "../components/SplitText";
 import Loading from "../components/Loading";
+import { TextWaveReveal } from "../content/TextAnimation/TextWaveReveal";
 
 // Add CSS for animations
 const fadeInUpKeyframes = `
@@ -51,9 +51,9 @@ const CategoryPage = () => {
     } else {
       setDynamicComponent(null);
     }
-    
+
     // Force re-animation by updating the key when category or subcategory changes
-    setAnimationKey(prevKey => prevKey + 1);
+    setAnimationKey((prevKey) => prevKey + 1);
   }, [subcategory, category]);
 
   function convertToPascalCaseWithDemo(str) {
@@ -68,10 +68,10 @@ const CategoryPage = () => {
 
   function formatTitle(text) {
     return text
-      .replace(/-/g, ' ') // Replace hyphens with spaces
-      .split(' ') // Split into words
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each
-      .join(' '); // Join them back
+      .replace(/-/g, " ") // Replace hyphens with spaces
+      .split(" ") // Split into words
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each
+      .join(" "); // Join them back
   }
 
   const category0 = formatTitle(category);
@@ -80,15 +80,15 @@ const CategoryPage = () => {
   // Add keyframes to the document
   useEffect(() => {
     // Create style element for keyframes if it doesn't exist
-    if (!document.getElementById('fadeInUpKeyframes')) {
-      const styleElement = document.createElement('style');
-      styleElement.id = 'fadeInUpKeyframes';
+    if (!document.getElementById("fadeInUpKeyframes")) {
+      const styleElement = document.createElement("style");
+      styleElement.id = "fadeInUpKeyframes";
       styleElement.innerHTML = fadeInUpKeyframes;
       document.head.appendChild(styleElement);
-      
+
       return () => {
         // Clean up when component unmounts
-        const element = document.getElementById('fadeInUpKeyframes');
+        const element = document.getElementById("fadeInUpKeyframes");
         if (element) element.remove();
       };
     }
@@ -96,7 +96,7 @@ const CategoryPage = () => {
 
   return (
     <div className="category-page">
-      <SplitText
+      {/* <SplitText
         key={`category-${animationKey}`}
         text={category0}
         className="text-[20px] font-[100] leading-[15px] mt-[10px] pl-[5px] font-[Rubic]"
@@ -120,7 +120,31 @@ const CategoryPage = () => {
         easing="easeOutCubic"
         threshold={0.2}
         rootMargin="-50px"
-      />
+      /> */}
+      <TextWaveReveal
+        key={`category-${animationKey}`}
+        containerClassName="text-left overflow-visible bg-transparent"
+        textClassName="text-[20px] font-[100] leading-[15px] mb-[10px] pl-[5px] font-[Rubic]"
+        animationDuration={0.9}
+        ease="elastic.out(1,0.3)"
+        scrollStart="top 80%"
+        stagger={0.04}
+        waveHeight={10}
+      >
+        {category}
+      </TextWaveReveal>
+      <TextWaveReveal
+        key={`subcategory-${animationKey}`}
+        containerClassName="pt-10 pb-2 text-left"
+        textClassName="text-[75px] font-[100] leading-[15px] mt-[0px] font-[Rubic]"
+        animationDuration={0.9}
+        ease="elastic.out(1,0.3)"
+        scrollStart="top 80%"
+        stagger={0.04}
+        waveHeight={25}
+      >
+        {subcategory}
+      </TextWaveReveal>
       {/* <h2>{category.replace("-", " ")}</h2> */}
       {/* <h3>{subcategory.replace("-", " ")}</h3> */}
       <div className="preview-btn-list z-0">
@@ -133,8 +157,8 @@ const CategoryPage = () => {
           style={{
             animation: `fadeInUp 0.6s ease forwards`,
             opacity: 0,
-            transform: 'translateY(100px)',
-            animationDelay: '0.1s'
+            transform: "translateY(100px)",
+            animationDelay: "0.1s",
           }}
         >
           <svg
@@ -164,8 +188,8 @@ const CategoryPage = () => {
           style={{
             animation: `fadeInUp 0.6s ease forwards`,
             opacity: 0,
-            transform: 'translateY(100px)',
-            animationDelay: '0.2s'
+            transform: "translateY(100px)",
+            animationDelay: "0.2s",
           }}
         >
           <svg
@@ -195,8 +219,8 @@ const CategoryPage = () => {
           style={{
             animation: `fadeInUp 0.6s ease forwards`,
             opacity: 0,
-            transform: 'translateY(100px)',
-            animationDelay: '0.3s'
+            transform: "translateY(100px)",
+            animationDelay: "0.3s",
           }}
         >
           <svg
@@ -221,7 +245,7 @@ const CategoryPage = () => {
         {content === "Preview" && (
           <>
             {DynamicComponent ? (
-              <Suspense fallback={<Loading/>}>
+              <Suspense fallback={<Loading />}>
                 <DynamicComponent />
               </Suspense>
             ) : (
