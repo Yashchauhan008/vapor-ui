@@ -206,7 +206,7 @@ const TextSlideRevealDemo = () => {
               <div className="flex items-center">
                 <input
                   type="range"
-                  min="5"
+                  min="-100"
                   max="100"
                   step="5"
                   value={animationConfig.distance}
