@@ -232,7 +232,7 @@ const TextSlideRevealDemo = () => {
                 onChange={(e) =>
                   handleConfigChange("direction", e.target.value)
                 }
-                className="w-full p-2 border-4 rounded-full border-gray-700 bg-transparent"
+                className="w-full mt-2 p-2 rounded-md bg-gray-800 text-white"
               >
                 {directionOptions.map((option) => (
                   <option key={option} value={option}>
@@ -247,7 +247,7 @@ const TextSlideRevealDemo = () => {
               <select
                 value={animationConfig.ease}
                 onChange={(e) => handleConfigChange("ease", e.target.value)}
-                className="w-full p-2 border-4 rounded-full border-gray-700 bg-transparent"
+                className="w-full mt-2 p-2 rounded-md bg-gray-800 text-white"
               >
                 {easeOptions.map((option) => (
                   <option key={option} value={option}>
@@ -266,7 +266,7 @@ const TextSlideRevealDemo = () => {
                 onChange={(e) =>
                   handleConfigChange("scrollStart", e.target.value)
                 }
-                className="w-full p-2 border-4 rounded-full border-gray-700 bg-transparent"
+                className="w-full mt-2 p-2 rounded-md bg-gray-800 text-white"
               >
                 <option value="top 90%">Very Early (top 90%)</option>
                 <option value="top 80%">Early (top 80%)</option>
@@ -283,7 +283,7 @@ const TextSlideRevealDemo = () => {
                 onChange={(e) =>
                   handleConfigChange("textColor", e.target.value)
                 }
-                className="w-full p-2 border-4 rounded-full border-gray-700 bg-transparent"
+                className="w-full mt-2 p-2 rounded-md bg-gray-800 text-white"
               >
                 {colorOptions.map((option) => (
                   <option key={option} value={option}>
@@ -298,7 +298,7 @@ const TextSlideRevealDemo = () => {
               <select
                 value={animationConfig.fontSize}
                 onChange={(e) => handleConfigChange("fontSize", e.target.value)}
-                className="w-full p-2 border-4 rounded-full border-gray-700 bg-transparent"
+                className="w-full mt-2 p-2 rounded-md bg-gray-800 text-white"
               >
                 {fontSizeOptions.map((option) => (
                   <option key={option} value={option}>
