@@ -87,10 +87,10 @@ export const TextFadeReveal = ({
   return (
     <div
       ref={containerRef}
-      className={`overflow-hidden ${containerClassName}`}
+      className={"overflow-hidden "+containerClassName}
       data-scroll-trigger="true" // Add attribute for debugging
     >
-      <span className={`inline-block ${textClassName}`}>
+      <span className={"inline-block "+textClassName}>
         {splitText}
       </span>
     </div>

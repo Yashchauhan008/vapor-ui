@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const TextSlideReveal = ({
     children,
-    direction = "right", // "right" or "left"
+    direction = "left", // "right" or "left"
     scrollContainerRef,
     containerClassName = "",
     textClassName = "",
@@ -70,9 +70,9 @@ export const TextSlideReveal = ({
     return (
       <div
         ref={containerRef}
-        className={`overflow-hidden ${containerClassName}`}
+        className={"overflow-hidden "+containerClassName}
       >
-        <span className={`inline-block ${textClassName}`}>
+        <span className={"inline-block "+textClassName}>
           {splitText}
         </span>
       </div>

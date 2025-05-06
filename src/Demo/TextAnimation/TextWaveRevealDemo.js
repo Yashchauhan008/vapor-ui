@@ -80,7 +80,7 @@ const TextWaveRevealDemo = () => {
   const paragraphText = "Another writing challenge can be to take the individual sentences in the random paragraph and incorporate a single sentence from that into a new paragraph to create a short story. Unlike the random sentence generator, the sentences from the random paragraph will have some connection to one another so it will be a bit different. You also won't know exactly how many sentences will appear in the random paragraph.";
 
   // Available options for dropdown selects
-  const easeOptions = ["power1.out", "power2.out", "power3.out", "power4.out", "back.out", "elastic.out", "bounce.out"];
+  const easeOptions = ["elastic.out(1,0.3)","power1.out", "power2.out", "power3.out", "power4.out", "back.out", "elastic.out", "bounce.out"];
   const colorOptions = ["text-gray-800", "text-blue-500", "text-red-500", "text-green-500", "text-purple-500", "text-yellow-500"];
   const fontSizeOptions = ["text-xl", "text-2xl", "text-3xl", "text-4xl", "text-5xl"];
   const fontWeightOptions = ["font-normal", "font-medium", "font-semibold", "font-bold"];

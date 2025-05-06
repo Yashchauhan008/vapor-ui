@@ -37,8 +37,8 @@ const SocialIconsGrid = ({
     <div
       className="grid gap-1 p-2"
       style={{
-        gridTemplateColumns: `repeat(${x}, ${blockWidth}px)`,
-        gridTemplateRows: `repeat(${y}, ${blockHeight}px)`
+        gridTemplateColumns: "repeat("+x+", "+blockWidth+"px)",
+        gridTemplateRows: "repeat("+y+"}, "+blockHeight+"px)"
       }}
     >
       {gridIcons.map((icon, index) => {

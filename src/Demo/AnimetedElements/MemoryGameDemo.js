@@ -2,7 +2,7 @@ import React from 'react'
 import MemoryGame from '../../content/AnimatedElements/MemoryGame';
 import PropsTable from '../../components/PropTable';
 import DependencyList from '../../components/DependencyList';
-const ChandelierDemo = () => {
+const MemoryGameDemo = () => {
 
   const props = [
     {
@@ -42,4 +42,4 @@ const ChandelierDemo = () => {
   )
 }
 
-export default ChandelierDemo
+export default MemoryGameDemo

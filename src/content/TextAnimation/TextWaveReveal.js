@@ -72,9 +72,9 @@ export const TextWaveReveal = ({
     return (
       <div
         ref={containerRef}
-        className={`overflow-hidden ${containerClassName}`}
+        className={"overflow-hidden "+containerClassName}
       >
-        <span className={`inline-block ${textClassName}`}>
+        <span className={"inline-block "+textClassName}>
           {splitText}
         </span>
       </div>
