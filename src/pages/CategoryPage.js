@@ -6,17 +6,18 @@ import { componentMap } from "../constants/Components";
 import img from "../assets/images/ElasticAcordianEmages/human1.webp";
 import Loading from "../components/Loading";
 import { TextWaveReveal } from "../content/TextAnimation/TextWaveReveal";
+import { TextFadeReveal } from "../content/TextAnimation/TextFadeReveal";
 
 // Add CSS for animations
 const fadeInUpKeyframes = `
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateX(-100px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }`;
 
@@ -121,30 +122,30 @@ const CategoryPage = () => {
         threshold={0.2}
         rootMargin="-50px"
       /> */}
-      <TextWaveReveal
+      <TextFadeReveal
         key={`category-${animationKey}`}
         containerClassName="text-left overflow-visible bg-transparent"
         textClassName="text-[20px] font-[100] leading-[15px] mb-[10px] pl-[5px] font-[Rubic]"
-        animationDuration={0.9}
+        animationDuration={0.5}
         ease="elastic.out(1,0.3)"
         scrollStart="top 80%"
         stagger={0.04}
         waveHeight={10}
       >
         {category}
-      </TextWaveReveal>
-      <TextWaveReveal
+      </TextFadeReveal>
+      <TextFadeReveal
         key={`subcategory-${animationKey}`}
         containerClassName="pt-10 pb-2 text-left"
         textClassName="text-[75px] font-[100] leading-[15px] mt-[0px] font-[Rubic]"
-        animationDuration={0.9}
+        animationDuration={0.5}
         ease="elastic.out(1,0.3)"
         scrollStart="top 80%"
         stagger={0.04}
         waveHeight={25}
       >
         {subcategory}
-      </TextWaveReveal>
+      </TextFadeReveal>
       {/* <h2>{category.replace("-", " ")}</h2> */}
       {/* <h3>{subcategory.replace("-", " ")}</h3> */}
       <div className="preview-btn-list z-0">
