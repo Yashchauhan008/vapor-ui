@@ -20,7 +20,8 @@ export const CATEGORIES = [
       'Mask Mouse Effect',
       'Memory Game',
       'Social Icons Grid',
-      'Black Hole'
+      'Black Hole',
+      'Tunnle'
     ]
   },
   {

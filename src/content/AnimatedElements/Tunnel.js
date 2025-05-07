@@ -1,8 +1,7 @@
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { gsap } from 'gsap';
 
-const TunnelEffect = ({
+const Tunnel = ({
   backgroundColor = '#141414',
   wireColor = '#FFFFFF',
   smoothness = 1.0,
@@ -18,7 +17,13 @@ const TunnelEffect = ({
   const mountRef = useRef(null);
   
   useEffect(() => {
+    // Early return if ref not attached
     if (!mountRef.current) return;
+    
+    // Clear any previous content
+    while (mountRef.current.firstChild) {
+      mountRef.current.removeChild(mountRef.current.firstChild);
+    }
     
     // Scene, Camera, and Renderer Setup
     const scene = new THREE.Scene();
@@ -28,7 +33,7 @@ const TunnelEffect = ({
       0.1, 
       1000
     );
-    camera.position.z = 0;
+    camera.position.z = 5; // Start a bit back to see the tunnel entrance
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -140,34 +145,38 @@ const TunnelEffect = ({
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // GSAP Camera Animation with Mouse Shake
-    let percentage = { value: 0 };
-    
-    const animation = gsap.to(percentage, {
-      value: 1,
-      duration: animationDuration,
-      ease: "linear",
-      repeat: -1,
-      onUpdate: () => {
-        const p1 = path.getPointAt(percentage.value);
-        const p2 = path.getPointAt((percentage.value + 0.01) % 1);
-
-        // Add a small shake effect based on mouse movement
-        const shakeX = mouse.x * 0.3;
-        const shakeY = mouse.y * 0.3;
-
-        camera.position.set(p1.x + shakeX, p1.y + shakeY, p1.z);
-        camera.lookAt(p2);
-      }
-    });
+    // Variables for camera animation
+    let currentPosition = 0;
+    const speed = 0.001 * (10 / animationDuration); // Adjust by animation duration
 
     // Animation Loop
-    const render = () => {
+    const animate = () => {
+      // Update time uniform for animated noise
       uniforms.uTime.value += 0.01;
+      
+      // Move camera along the path
+      currentPosition = (currentPosition + speed) % 1;
+      const camPos = path.getPointAt(currentPosition);
+      const lookAtPos = path.getPointAt((currentPosition + 0.01) % 1);
+      
+      // Add mouse shake
+      const shakeX = mouse.x * 0.3;
+      const shakeY = mouse.y * 0.3;
+      
+      camera.position.set(
+        camPos.x + shakeX,
+        camPos.y + shakeY,
+        camPos.z
+      );
+      camera.lookAt(lookAtPos);
+      
+      // Render the scene
       renderer.render(scene, camera);
+      requestAnimationFrame(animate);
     };
-
-    const animationFrameId = gsap.ticker.add(render);
+    
+    // Start animation
+    const animationId = requestAnimationFrame(animate);
 
     // Window Resize Handling
     const handleResize = () => {
@@ -181,12 +190,13 @@ const TunnelEffect = ({
     // Clean up
     return () => {
       if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+        while (mountRef.current.firstChild) {
+          mountRef.current.removeChild(mountRef.current.firstChild);
+        }
       }
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
-      gsap.ticker.remove(animationFrameId);
-      animation.kill();
+      cancelAnimationFrame(animationId);
       geometry.dispose();
       wireframeMaterial.dispose();
       renderer.dispose();
@@ -206,14 +216,15 @@ const TunnelEffect = ({
   return (
     <div 
       ref={mountRef} 
-      className="tunnel-container" 
       style={{ 
         width, 
         height, 
-        backgroundColor 
+        backgroundColor,
+        overflow: 'hidden'
       }}
     />
   );
 };
 
-export default TunnelEffect;
+
+export default Tunnel;
