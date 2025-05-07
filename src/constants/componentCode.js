@@ -9,7 +9,8 @@ const Testimonials = {
     'elastic-accordion': () => import("../constants/AnimatedElements/ElasticAccordionCode"),
     'mask-mouse-effect': () => import("../constants/AnimatedElements/MaskMouseEffectCode"),
     'memory-game': () => import("../constants/AnimatedElements/MemoryGameCode"),
-    'social-icons-grid': () => import("../constants/AnimatedElements/SocialIconsGridCode")
+    'social-icons-grid': () => import("../constants/AnimatedElements/SocialIconsGridCode"),
+    'black-hole': () => import("../constants/AnimatedElements/BlackHoleCode.js")
     // '': () => import("../constants/")
   };
 

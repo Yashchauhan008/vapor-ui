@@ -132,7 +132,7 @@ const CategoryPage = () => {
         stagger={0.04}
         waveHeight={10}
       >
-        {category}
+        {category0}
       </TextFadeReveal>
       <TextFadeReveal
         key={`subcategory-${animationKey}`}
@@ -144,7 +144,7 @@ const CategoryPage = () => {
         stagger={0.04}
         waveHeight={25}
       >
-        {subcategory}
+        {subcategory0}
       </TextFadeReveal>
       {/* <h2>{category.replace("-", " ")}</h2> */}
       {/* <h3>{subcategory.replace("-", " ")}</h3> */}

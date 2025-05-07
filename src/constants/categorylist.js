@@ -19,7 +19,8 @@ export const CATEGORIES = [
       'Elastic Accordion',
       'Mask Mouse Effect',
       'Memory Game',
-      'Social Icons Grid'
+      'Social Icons Grid',
+      'Black Hole'
     ]
   },
   {

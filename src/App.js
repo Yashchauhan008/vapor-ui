@@ -6,6 +6,7 @@ import ShowcasePage from './pages/ShowcasePage';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import CategoryPage from './pages/CategoryPage';
+import BlackHole from './content/temp';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/showcase' element={<ShowcasePage/>}/>
+          <Route path='/test' element={<BlackHole/>}/>
           <Route path='/:category/:subcategory' element={
                <div className="full-screen">
                <Header />

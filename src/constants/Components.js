@@ -9,7 +9,8 @@ const Testimonials = {
     'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
     'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo"),
     'memory-game': () => import("../Demo/AnimetedElements/MemoryGameDemo"),
-    'social-icons-grid': () => import("../Demo/AnimetedElements/SocialIconsGridDemo")
+    'social-icons-grid': () => import("../Demo/AnimetedElements/SocialIconsGridDemo"),
+    'black-hole': () => import("../Demo/AnimetedElements/BlackHoleDemo")
   };
 
   
