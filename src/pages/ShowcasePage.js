@@ -1,5 +1,5 @@
 import React from 'react'
-import Chandelier from '../content/AnimatedElements/Chandelier'
+import Chandelier from '../content/Backgrounds/Chandelier'
 
 const ShowcasePage = () => {
   return (

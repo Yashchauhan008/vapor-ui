@@ -501,7 +501,7 @@ code {
   appearance: none;
   width:500px;
   height: 6px;
-  background: #222; /* Dark Track */
+  background: #1F2937; /* Dark Track */
   border-radius: 5px;
   outline: none;
   cursor: pointer;

@@ -15,13 +15,20 @@ export const CATEGORIES = [
     subcategories: [
       'Apple Dock',
       'Tech Stack Showcase',
-      'Chandelier',
       'Elastic Accordion',
       'Mask Mouse Effect',
       'Memory Game',
-      'Social Icons Grid',
+      'Social Icons Grid'
+    ]
+  },
+  {
+    name: 'Backgrounds',
+    subcategories: [
       'Black Hole',
-      'Tunnle'
+      'Chandelier',
+      'Tunnle',
+      'Pipe Grid',
+      'Strip Pattern'
     ]
   },
   {
@@ -31,13 +38,6 @@ export const CATEGORIES = [
       'Text Fade Reveal',
       'Text Slide Reveal',
       'Text Wave Reveal'
-    ]
-  },
-  {
-    name: 'Form Elements',
-    subcategories: [
-      'Action Button',
-      'Full Screen Navbar'
     ]
   },
   {
@@ -53,8 +53,10 @@ export const CATEGORIES = [
     ]
   },
   {
-    name: 'Testimonials',
+    name: 'Form Elements',
     subcategories: [
+      'Action Button',
+      'Full Screen Navbar',
       'Testimonial Carousel',
     ]
   },

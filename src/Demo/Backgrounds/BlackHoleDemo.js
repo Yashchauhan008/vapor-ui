@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BlackHole from "../../content/AnimatedElements/BlackHole";
+import BlackHole from "../../content/Backgrounds/BlackHole";
 import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
 

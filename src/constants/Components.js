@@ -1,23 +1,19 @@
-const Testimonials = {
-    'testimonial-carousel': () => import("../Demo/Testimonial/TestimonialCarouselDemo"),
-  };
+
   
   const InteractiveElements = {
     'apple-dock': () => import("../Demo/AnimetedElements/AppleDockDemo"),
     'tech-stack-showcase': () => import("../Demo/AnimetedElements/TechStackShowcaseDemo"),
-    'chandelier': () => import("../Demo/AnimetedElements/ChandelierDemo"),
     'elastic-accordion': () => import("../Demo/AnimetedElements/ElasticAccordionDemo"),
     'mask-mouse-effect': () => import("../Demo/AnimetedElements/MaskMouseEffectDemo"),
     'memory-game': () => import("../Demo/AnimetedElements/MemoryGameDemo"),
     'social-icons-grid': () => import("../Demo/AnimetedElements/SocialIconsGridDemo"),
-    'black-hole': () => import("../Demo/AnimetedElements/BlackHoleDemo"),
-    'tunnle': () => import("../Demo/AnimetedElements/TunnelDemo")
   };
 
   
   const FormElements = {
     "action-button": () => import("../Demo/FormElements/ActionButtonDemo"),
-    "full-screen-navbar": () => import("../Demo/FormElements/FullScreenNavbarDemo")
+    "full-screen-navbar": () => import("../Demo/FormElements/FullScreenNavbarDemo"),
+    "testimonial-carousel": () => import("../Demo/FormElements/TestimonialCarouselDemo")
   }
 
   const Cards = {
@@ -37,6 +33,15 @@ const Testimonials = {
     "text-wave-reveal": () => import("../Demo/TextAnimation/TextWaveRevealDemo")
   }
   
+  const Backgrounds = {
+    'black-hole': () => import("../Demo/Backgrounds/BlackHoleDemo"),
+    'chandelier': () => import("../Demo/Backgrounds/ChandelierDemo"),
+    'tunnle': () => import("../Demo/Backgrounds/TunnelDemo"),
+    'pipe-grid': () => import("../Demo/Backgrounds/PipeGridDemo"),
+    'strip-pattern': () => import("../Demo/Backgrounds/StripPatternDemo")
+  }
+
+
   const Testing = {
     "test-demo": () => import("../Demo/TestDemo")
   }
@@ -50,12 +55,12 @@ const Testimonials = {
 //   };
   
   export const componentMap = {
-    ...Testimonials,
     ...InteractiveElements,
     ...FormElements,
     ...Cards,
     ...Testing,
-    ...TextAnimation
+    ...TextAnimation,
+    ...Backgrounds
     // ...components,
     // ...marquee,
   };

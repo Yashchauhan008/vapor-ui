@@ -138,7 +138,7 @@ const AppleDockDemo = () => {
           <h3 className="text-xl font-medium mb-4">Customization</h3>
           <div className="customization-box rounded-lg p-4 mb-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="customization-item d-flex item-center">
+              <div className="customization-item">
                 <label className="text-gray-300 mb-2">Item Count</label>
                 <div className="flex items-center">
                   <input

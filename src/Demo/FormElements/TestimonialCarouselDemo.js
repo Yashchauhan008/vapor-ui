@@ -1,7 +1,7 @@
 import React from "react";
-import TestimonialCarousel from "../../content/Testimonial/TestimonialCarousel";
 import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
+import TestimonialCarousel from "../../content/FormElements/TestimonialCarousel";
 
 const TestimonialCarouselDemo = () => {
   // Sample testimonial data

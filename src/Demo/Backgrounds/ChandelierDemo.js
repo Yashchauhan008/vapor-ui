@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Chandelier from "../../content/AnimatedElements/Chandelier";
+import Chandelier from "../../content/Backgrounds/Chandelier";
 import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
 
