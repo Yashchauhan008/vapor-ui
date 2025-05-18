@@ -1,4 +1,16 @@
-
+const gridSize = "${gridSize}";
+export const PipeGridCode = {
+    installation:"",
+    imports:"",
+    parameters:"",
+    usage:`<PipeGrid
+    dotSize={9}
+    ringSize={4}
+    gridSize={35}
+    animationDuration={2}
+    backgroundColor={"transparent"}
+/>`,
+    code:`
 import { useState, useEffect } from 'react';
 
 const PipeGrid = ({
@@ -51,7 +63,7 @@ const PipeGrid = ({
         />
       ))}
 
-      <style jsx>{`
+      <style jsx>{\`
         @keyframes animateDots_one {
           0% {
             background-position: 0 0;
@@ -69,9 +81,10 @@ const PipeGrid = ({
             background-position: 0 0;
           }
         }
-      `}</style>
+      \`}</style>
     </div>
   );
 };
 
-export default PipeGrid;
+export default PipeGrid;`,
+}

@@ -1,4 +1,19 @@
-import { useRef, useCallback } from 'react';
+export const TunnleCode = {
+    installation:"",
+    imports:"",
+    parameters:"",
+    usage:`<Tunnel
+  backgroundColor={"#141414"}
+  wireColor={"#FFFFFF"}
+  smoothness={1}
+  gridDensity={26}
+  noiseScale={10}
+  noiseSpeed={0.5}
+  noiseStrength={0}
+  animationDuration={15}
+  enableDisplacement={true}
+/>`,
+    code:`import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 const Tunnel = ({
@@ -14,33 +29,27 @@ const Tunnel = ({
   width = '100%',
   height = '100vh'
 }) => {
-  const rendererRef = useRef();
-  const animationIdRef = useRef();
-  const containerRef = useRef();
-  const uniformsRef = useRef();
-  const pathRef = useRef();
-  const cameraRef = useRef();
-  const mouse = useRef({ x: 0, y: 0 });
-  const currentPosition = useRef(0);
+  const containerRef = useRef(null);
 
-  const initializeScene = useCallback((container) => {
-    if (!container) return;
-
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const container = containerRef.current;
+    
     // Clean up previous content if any
     while (container.firstChild) {
       container.removeChild(container.firstChild);
     }
 
+    // Initialize scene
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
-    cameraRef.current = camera;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(new THREE.Color(backgroundColor));
     container.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
 
     const uniforms = {
       uSmoothness: { value: smoothness },
@@ -53,18 +62,17 @@ const Tunnel = ({
       uWireColor: { value: new THREE.Color(wireColor) },
       uBaseColor: { value: new THREE.Color(backgroundColor) }
     };
-    uniformsRef.current = uniforms;
 
     const wireframeMaterial = new THREE.ShaderMaterial({
       uniforms,
-      vertexShader: `
+      vertexShader: \`
         varying vec2 vUv;
         void main() {
           vUv = uv;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
-      `,
-      fragmentShader: `
+      \`,
+      fragmentShader: \`
         uniform float uSmoothness;
         uniform float uGridDensity;
         uniform float uNoiseScale;
@@ -108,7 +116,7 @@ const Tunnel = ({
           finalColor += noiseValue;
           gl_FragColor = vec4(finalColor, 1.0);
         }
-      `,
+      \`,
       side: THREE.BackSide
     });
 
@@ -122,41 +130,47 @@ const Tunnel = ({
       new THREE.Vector3(-2, -1, -60),
       new THREE.Vector3(0, 0, -70),
     ]);
-    pathRef.current = path;
 
     const geometry = new THREE.TubeGeometry(path, 300, 2, 32, false);
     const tube = new THREE.Mesh(geometry, wireframeMaterial);
     scene.add(tube);
 
+    // Mouse tracking
+    const mouse = { x: 0, y: 0 };
+    
     const handleMouseMove = (e) => {
-      mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
-      mouse.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
+    // Animation setup
     const speed = 0.001 * (10 / animationDuration);
+    let currentPosition = 0;
+    let animationId;
 
     const animate = () => {
       uniforms.uTime.value += 0.01;
 
-      currentPosition.current = (currentPosition.current + speed) % 1;
-      const camPos = path.getPointAt(currentPosition.current);
-      const lookAtPos = path.getPointAt((currentPosition.current + 0.01) % 1);
+      currentPosition = (currentPosition + speed) % 1;
+      const camPos = path.getPointAt(currentPosition);
+      const lookAtPos = path.getPointAt((currentPosition + 0.01) % 1);
 
       camera.position.set(
-        camPos.x + mouse.current.x * 0.3,
-        camPos.y + mouse.current.y * 0.3,
+        camPos.x + mouse.x * 0.3,
+        camPos.y + mouse.y * 0.3,
         camPos.z
       );
       camera.lookAt(lookAtPos);
 
       renderer.render(scene, camera);
-      animationIdRef.current = requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
     animate();
 
+    // Handle window resize
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -165,19 +179,25 @@ const Tunnel = ({
 
     window.addEventListener("resize", handleResize);
 
+    // Cleanup function
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationIdRef.current);
+      cancelAnimationFrame(animationId);
       geometry.dispose();
       wireframeMaterial.dispose();
       renderer.dispose();
+      
+      // Remove renderer from DOM
+      if (container && container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
+      }
     };
   }, [
     backgroundColor,
     wireColor,
     smoothness,
-    gridDensity,
+    gridDensity, 
     noiseScale,
     noiseSpeed,
     noiseStrength,
@@ -187,12 +207,7 @@ const Tunnel = ({
 
   return (
     <div
-      ref={(el) => {
-        if (el && el !== containerRef.current) {
-          containerRef.current = el;
-          initializeScene(el);
-        }
-      }}
+      ref={containerRef}
       style={{
         width,
         height,
@@ -203,4 +218,5 @@ const Tunnel = ({
   );
 };
 
-export default Tunnel;
+export default Tunnel;`,
+}

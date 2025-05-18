@@ -38,6 +38,9 @@
   const Backgrounds = {
     'black-hole': () => import("../constants/Backgrounds/BlackHoleCode.js"),
     'chandelier': () => import("../constants/Backgrounds/ChandelierCode"),
+    'tunnle': () => import("../constants/Backgrounds/TunnleCode.js"),
+    'pipe-grid': () => import("../constants/Backgrounds/PipeGridCode.js"),
+    'strip-pattern': () => import("../constants/Backgrounds/StripPatternCode.js")
   }
 
 
