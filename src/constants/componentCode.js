@@ -45,7 +45,7 @@
 
 
   const Testing = {
-    "test-demo": () => import("../Demo/TestDemo")
+    "test-demo": () => import("../constants/TempCode.js")
   }
 
   
