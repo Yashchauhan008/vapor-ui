@@ -192,7 +192,8 @@ code {
   /* overflow: hidden; */
   padding-left: 50px;
   overflow-x:hidden ;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  padding-bottom: 200px;
 }
 .category-page::-webkit-scrollbar{
   display: none;
@@ -473,6 +474,7 @@ code {
 .demo-box{
   /* background-color: rgba(255, 255, 255, 0.291); */
   margin: 0;
+
 }
 
 .preview-box{
