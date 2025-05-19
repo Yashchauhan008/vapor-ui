@@ -7,11 +7,20 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import CategoryPage from './pages/CategoryPage';
 import BlackHole from './content/temp';
+import CustomCursor from './components/CustomCursor';
+import defaultCursorImage from "./assets/vaporlogo.svg";
+import textCursorImage from "./assets/vaporlogo.svg";
+import pointerCursorImage from "./assets/vaporlogo.svg";
+import dragCursorImage from "./assets/vaporlogo.svg";
+
+
 
 function App() {
+
   return (
     <>
       <Router>
+      <CustomCursor/>
         <Routes>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/showcase' element={<ShowcasePage/>}/>

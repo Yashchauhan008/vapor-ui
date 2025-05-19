@@ -13,11 +13,11 @@ const fadeInUpKeyframes = `
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateY(100px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }`;
 
@@ -95,33 +95,15 @@ const CategoryPage = () => {
     }
   }, []);
 
+  // Helper function to determine button class based on active state
+  const getButtonClass = (buttonName) => {
+    return buttonName === content 
+      ? "btn1 animate-fade-in-up active-btn" 
+      : "btn1 animate-fade-in-up";
+  };
+
   return (
     <div className="category-page">
-      {/* <SplitText
-        key={`category-${animationKey}`}
-        text={category0}
-        className="text-[20px] font-[100] leading-[15px] mt-[10px] pl-[5px] font-[Rubic]"
-        delay={150}
-        animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-        animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-        easing="easeOutCubic"
-        threshold={0.1}
-        rootMargin="-50px"
-      />
-      <br />
-      <br />
-      <br />
-      <SplitText
-        key={`subcategory-${animationKey}`}
-        text={subcategory0}
-        className="text-[75px] font-[100] leading-[15px] mt-[0px] font-[Rubic]"
-        delay={150}
-        animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-        animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-        easing="easeOutCubic"
-        threshold={0.2}
-        rootMargin="-50px"
-      /> */}
       <TextFadeReveal
         key={`category-${animationKey}`}
         containerClassName="text-left overflow-visible bg-transparent"
@@ -146,12 +128,10 @@ const CategoryPage = () => {
       >
         {subcategory0}
       </TextFadeReveal>
-      {/* <h2>{category.replace("-", " ")}</h2> */}
-      {/* <h3>{subcategory.replace("-", " ")}</h3> */}
       <div className="preview-btn-list z-0">
         <button
           key={`preview-btn-${animationKey}`}
-          className="btn1 animate-fade-in-up"
+          className={getButtonClass("Preview")}
           onClick={() => {
             setContent("Preview");
           }}
@@ -170,7 +150,7 @@ const CategoryPage = () => {
             stroke-linecap="round"
             stroke-linejoin="round"
             focusable="false"
-            class="chakra-icon css-13otjrl"
+            className="chakra-icon css-13otjrl"
             height="1em"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +162,7 @@ const CategoryPage = () => {
         </button>
         <button
           key={`code-btn-${animationKey}`}
-          className="btn1 animate-fade-in-up"
+          className={getButtonClass("Code")}
           onClick={() => {
             setContent("Code");
           }}
@@ -201,7 +181,7 @@ const CategoryPage = () => {
             stroke-linecap="round"
             stroke-linejoin="round"
             focusable="false"
-            class="chakra-icon css-13otjrl"
+            className="chakra-icon css-13otjrl"
             height="1em"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -213,7 +193,7 @@ const CategoryPage = () => {
         </button>
         <button
           key={`contribute-btn-${animationKey}`}
-          className="btn1 animate-fade-in-up"
+          className={getButtonClass("Contribute")}
           onClick={() => {
             setContent("Contribute");
           }}
@@ -232,7 +212,7 @@ const CategoryPage = () => {
             stroke-linecap="round"
             stroke-linejoin="round"
             focusable="false"
-            class="chakra-icon css-13otjrl"
+            className="chakra-icon css-13otjrl"
             height="1em"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -242,6 +222,7 @@ const CategoryPage = () => {
           Contribute
         </button>
       </div>
+
       <div className="content-box">
         {content === "Preview" && (
           <>
