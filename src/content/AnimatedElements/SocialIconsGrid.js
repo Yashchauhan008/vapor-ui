@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-const SocialIconsGrid = ({ 
+const SocialIconsGrid = ({
   x = 10,
   y = 10,
   blockHeight = 50,
   blockWidth = 50,
-  iconImages = []
+  iconImages = [],
 }) => {
   const totalCells = x * y;
   const [gridIcons, setGridIcons] = useState([]);
@@ -22,7 +22,7 @@ const SocialIconsGrid = ({
 
   // Toggle active cell
   const toggleActive = (index) => {
-    setActiveIndexes(prev => {
+    setActiveIndexes((prev) => {
       const updated = new Set(prev);
       if (updated.has(index)) {
         updated.delete(index); // Toggle off if already active
@@ -37,8 +37,8 @@ const SocialIconsGrid = ({
     <div
       className="grid gap-1 p-2"
       style={{
-        gridTemplateColumns: "repeat("+x+", "+blockWidth+"px)",
-        gridTemplateRows: "repeat("+y+"}, "+blockHeight+"px)"
+        gridTemplateColumns: "repeat(" + x + ", " + blockWidth + "px)",
+        gridTemplateRows: "repeat(" + y + "}, " + blockHeight + "px)",
       }}
     >
       {gridIcons.map((icon, index) => {
@@ -50,27 +50,45 @@ const SocialIconsGrid = ({
             style={{
               width: blockWidth,
               height: blockHeight,
-              transform: isActive ? 'rotate(-90deg)' : 'rotate(0deg)',
+              transform: isActive ? "rotate(-90deg)" : "rotate(0deg)",
             }}
             title={icon?.title}
             onClick={() => toggleActive(index)}
           >
             {icon && (
               <img
-                src={icon.src}
-                alt={icon.title}
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  objectFit: 'cover',
-                  filter: isActive ? 'none' : 'grayscale(100%)',
-                  transition: 'filter 0.3s, transform 0.3s',
-                }}
-              />
+  src={icon.src}
+  alt={icon.title}
+  style={{
+    maxWidth: "100%",
+    maxHeight: "100%",
+    objectFit: "cover",
+    filter: !isActive ? "grayscale(100%)" : "none",
+    transition: "filter 0.3s, transform 0.3s",
+  }}
+  onMouseEnter={e => {
+    e.currentTarget.style.filter = "none";
+  }}
+  onMouseLeave={e => {
+    e.currentTarget.style.filter = !isActive ? "grayscale(100%)" : "none";
+  }}
+  className="hover:-rotate-90"
+/>
+
             )}
           </div>
         );
       })}
+      {/* <style jsx>{`
+        @keyframes rotateMe {
+          0% {
+            tr;
+          }
+          100% {
+            background-position: 0 300%;
+          }
+        }
+      `}</style> */}
     </div>
   );
 };

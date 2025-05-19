@@ -4,6 +4,7 @@ import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
 
 const StripPatternDemo = () => {
+  const [fullScreen, setFullScreen] = useState(false);
   const [title, setTitle] = useState("Background 1");
   const [colors, setColors] = useState(["#b3b2ff", "#c08aff", "#ffd6fa", "#ff97c5", "#ffecec"]);
   const [stripWidth, setStripWidth] = useState(24); 
@@ -40,7 +41,7 @@ const StripPatternDemo = () => {
   return (
     <>
       <div className="demo-box">
-        <div className="preview-box flex justify-content-center gap-3 p-10">
+        {/* <div className="preview-box flex justify-content-center gap-3 p-10">
           <StripPattern
             color1={safeColors[0]}
             color2={safeColors[1]}
@@ -55,8 +56,49 @@ const StripPatternDemo = () => {
               </h1>
             </div>
           </StripPattern>
-        </div>
+        </div> */}
 
+
+{!fullScreen && (
+          <button
+            onClick={() => setFullScreen(true)}
+            className="btn1 relative translate-y-20 translate-x-7 rounded-full z-[200] mb-4 px-4 py-2 bg-white text-black"
+          >
+            Go Fullscreen
+          </button>
+        )}
+
+        <div
+          className={`border h-screen border-white/20 rounded-[40px] overflow-hidden z-[100] transition-all duration-500 p-10 ease-in-out ${
+            fullScreen
+              ? "fixed top-0 left-0 w-screen h-screen bg-black"
+              : "relative"
+          }`}
+        >
+          {fullScreen && (
+            <button
+              onClick={() => setFullScreen(false)}
+              className="btn1 absolute top-4 -right-4 px-3 py-1 bg-white text-black rounded z-[110]"
+            >
+              Back to Original Size
+            </button>
+          )}
+
+<StripPattern
+            color1={safeColors[0]}
+            color2={safeColors[1]}
+            color3={safeColors[2]}
+            color4={safeColors[3]}
+            color5={safeColors[4]}
+            stripWidth={stripWidth}
+          >
+            <div className="flex items-center justify-center h-full min-h-[500px]">
+              <h1 className="text-white font-bold text-5xl">
+                {title}
+              </h1>
+            </div>
+          </StripPattern>
+        </div>
         <div className="states">
           <h3>Customization</h3>
           <div className="customization-box space-y-6">

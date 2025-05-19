@@ -22,6 +22,14 @@
   font-family: "Rubic";
   src: url("./assets/fonts/Rubik-Medium.ttf") format("truetype");
 }
+@font-face {
+  font-family: "crima";
+  src: url("./assets/fonts/Crima.otf") format("truetype");
+}
+@font-face {
+  font-family: "annabel";
+  src: url("./assets/fonts/annabel\ 1.otf") format("truetype");
+}
 /* @font-face {
   font-family: "Gilroy";
   src: url("./assets/fonts/Gilroy-Regular.ttf") format("truetype");
@@ -131,6 +139,7 @@ code {
   /* background-color: #fff; */
   border-left: 1px solid rgba(50, 80, 83, 0.565);
 }
+
 .sub-category h4 {
   padding: 0;
   margin: 0;
@@ -147,12 +156,33 @@ code {
 .sub-category h4.active {
   /* line-height: 10px; */
   /* border-left: 2px solid rgb(0, 234, 255); */
-  border-left: 2px solid #5F45F2;
+  border-left: 2px solid #01EBFF;
   transform: translateX(-1px);
   transition: 0.5s;
   color: #fff;
   font-weight: 500;
 }
+/* .sub-category h4 {
+  padding: 0;
+  margin: 0;
+  padding: 8px 10px;
+  margin-left: 13px;
+  color: #8e8e8e;
+  font-weight: 400;
+  transition: 0.5s;
+  font-family: sans-serif;
+  cursor: pointer;
+  font-size: 15px;
+}
+.sub-category h4.active {
+  border-left: 2px solid #5F45F2;
+  transform: translateX(-1px);
+  transition: 0.5s;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+} */
 
 .category-page {
   /* border: 2px solid red; */
@@ -195,6 +225,7 @@ code {
   justify-content: center;
   gap: 10px;
   margin-top: 30px;
+  /* background: #00d9ff1d; */
   backdrop-filter: blur(6px);
   padding: 10px;
   border: 1px solid #666666;

@@ -4,13 +4,14 @@ import PropsTable from "../../components/PropTable";
 import DependencyList from "../../components/DependencyList";
 
 const ChandelierDemo = () => {
+  const [fullScreen, setFullScreen] = useState(false);
   const [ropeColor, setRopeColor] = useState("#ffffff");
   const [lightColor, setLightColor] = useState("#01EBFF");
   const [key, setKey] = useState(0); // Key for forcing re-render
 
   // Force re-render when colors change
   useEffect(() => {
-    setKey(prevKey => prevKey + 1);
+    setKey((prevKey) => prevKey + 1);
   }, [ropeColor, lightColor]);
 
   const props = [
@@ -38,13 +39,42 @@ const ChandelierDemo = () => {
   return (
     <>
       <div className="demo-box">
-        <div className="preview-box" style={{ paddingTop: "0px" }}>
+        {/* <div className="preview-box" style={{ paddingTop: "0px" }}>
           <Chandelier 
             key={key} 
             ropeColor={ropeColor} 
             lightColor={lightColor} 
           />
+        </div> */}
+
+        {!fullScreen && (
+          <button
+            onClick={() => setFullScreen(true)}
+            className="btn1 relative translate-y-20 translate-x-7 rounded-full z-[200] mb-4 px-4 py-2 bg-white text-black"
+          >
+            Go Fullscreen
+          </button>
+        )}
+
+        <div
+          className={`border h-screen border-white/20 rounded-[40px] overflow-hidden z-[100] transition-all duration-500 ease-in-out ${
+            fullScreen
+              ? "fixed top-0 mt-0 left-0 w-screen h-screen bg-black"
+              : "relative"
+          }`}
+        >
+          {fullScreen && (
+            <button
+              onClick={() => setFullScreen(false)}
+              className="btn1 absolute top-4 -right-4 px-3 py-1 bg-white text-black rounded z-[110]"
+            >
+              Back to Original Size
+            </button>
+          )}
+
+          <Chandelier key={key} ropeColor={ropeColor} lightColor={lightColor} />
         </div>
+
         <div className="states">
           <h3>Customization</h3>
           <div className="customization-box rounded-lg p-4 mb-6 bg-transparent shadow-inner">
@@ -68,7 +98,7 @@ const ChandelierDemo = () => {
                     className="rounded bg-transparent px-2 py-1 text-sm w-24"
                   >
                     {ropeColor}
-                    </div>
+                  </div>
                 </div>
               </div>
               <div className="customization-item">

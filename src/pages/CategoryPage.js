@@ -107,7 +107,7 @@ const CategoryPage = () => {
       <TextFadeReveal
         key={`category-${animationKey}`}
         containerClassName="text-left overflow-visible bg-transparent"
-        textClassName="text-[20px] font-[100] leading-[15px] mb-[10px] pl-[5px] font-[Rubic]"
+        textClassName="text-[20px] font-[100] leading-[15px] mb-[10px] pl-[5px] font-[annabel]"
         animationDuration={0.5}
         ease="elastic.out(1,0.3)"
         scrollStart="top 80%"
