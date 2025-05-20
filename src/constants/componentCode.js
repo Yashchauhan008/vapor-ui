@@ -28,6 +28,7 @@
   }
   
   const TextAnimations = {
+    "sparkles-title": () => import("../constants/TextAnimation/SparklesTitleCode.js"),
     "aurora-title": () => import("../constants/TextAnimation/AuroraTitleCode.js"),
     "text-fade-reveal": () => import("../constants/TextAnimation/TextFadeRevealCode.js"),
     "text-slide-reveal": () => import("../constants/TextAnimation/TextSlideRevealCode.js"),

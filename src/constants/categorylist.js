@@ -1,6 +1,6 @@
 // Highlighted sidebar items
-export const NEW = ['Kippo Card Swiper','Instagram Carousel','Magic Wand Reveal','Text Fade Reveal','Text Slide Reveal','Text Wave Reveal'];
-export const UPDATED = ['Social Icons Grid','Flip Gallery'];
+export const NEW = ['Kippo Card Swiper','Instagram Carousel','Black Hole','Sparkles Title'];
+export const UPDATED = ['Social Icons Grid'];
 
 // Used for main sidebar navigation
 export const CATEGORIES = [
@@ -34,6 +34,7 @@ export const CATEGORIES = [
   {
     name: 'Text Animation',
     subcategories: [
+      'Sparkles Title',
       'Aurora Title',
       'Text Fade Reveal',
       'Text Slide Reveal',

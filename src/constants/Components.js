@@ -27,6 +27,7 @@
   }
 
   const TextAnimation = {
+    "sparkles-title": () => import("../Demo/TextAnimation/SparklesTitleDemo"),
     "aurora-title": () => import("../Demo/TextAnimation/AuroraTitleDemo"),
     "text-fade-reveal": () => import("../Demo/TextAnimation/TextFadeRevealDemo"),
     "text-slide-reveal": () => import("../Demo/TextAnimation/TextSlideRevealDemo"),
