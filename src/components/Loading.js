@@ -3,7 +3,7 @@ import React from "react";
 const Loading = () => {
   return (
     <>
-      <div className="preview-box h-[400px] w-screen bg-black z-[100] flex items-center justify-center">
+      <div className="preview-box h-[400px] w-full bg-black z-[100] flex items-center justify-center">
         <div class="socket">
           <div class="gel center-gel">
             <div class="hex-brick h1"></div>

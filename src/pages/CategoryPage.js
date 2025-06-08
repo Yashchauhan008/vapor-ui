@@ -97,8 +97,8 @@ const CategoryPage = () => {
 
   // Helper function to determine button class based on active state
   const getButtonClass = (buttonName) => {
-    return buttonName === content 
-      ? "btn1 animate-fade-in-up active-btn" 
+    return buttonName === content
+      ? "btn1 animate-fade-in-up active-btn"
       : "btn1 animate-fade-in-up";
   };
 
@@ -128,7 +128,13 @@ const CategoryPage = () => {
       >
         {subcategory0}
       </TextFadeReveal>
-      
+      <div className="only-small z-[1000] absolute bottom-[100px] w-full h-[100px] flex items-center justify-center -translate-x-8">
+  <div className="px-6 pt-3 pb-5 border border-[#00d9ff] rounded-3xl bg-[#00d9ff] bg-[#00d9ff]/30 backdrop-blur-md max-w-xs text-center">
+    <h2 className="text-lg font-semibold text-[#00d9ff] mb-2">Please use a bigger screen</h2>
+    <h2 className="text-sm text-[#00d9ff]">Because bigger is better 🚀</h2>
+  </div>
+</div>
+
       <div className="preview-btn-list z-0">
         <button
           key={`preview-btn-${animationKey}`}
