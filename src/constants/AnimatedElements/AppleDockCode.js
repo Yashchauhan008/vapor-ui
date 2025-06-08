@@ -77,7 +77,7 @@ const AppleDock = ({
   };
 
   return (
-    <div className="flex justify-center items-center h-100 w-full bg-black">
+    <div className="flex justify-center items-center h-100 w-full bg-transparent">
       <motion.div 
         className="flex items-center mb-6 rounded-3xl backdrop-blur-lg bg-gray-800/30 border border-gray-700/30 px-3 py-3"
         initial={{ y: 100, opacity: 0 }}

@@ -103,7 +103,7 @@ const CategoryPage = () => {
   };
 
   return (
-    <div className="category-page">
+    <div className="category-page px-8">
       <TextFadeReveal
         key={`category-${animationKey}`}
         containerClassName="text-left overflow-visible bg-transparent"
@@ -119,7 +119,7 @@ const CategoryPage = () => {
       <TextFadeReveal
         key={`subcategory-${animationKey}`}
         containerClassName="pt-10 pb-2 text-left"
-        textClassName="text-[75px] font-[100] leading-[15px] mt-[0px] font-[Rubic]"
+        textClassName="text-[35px] sm:text-[75px] font-[100] leading-[15px] mt-[0px] font-[Rubic]"
         animationDuration={0.5}
         ease="elastic.out(1,0.3)"
         scrollStart="top 80%"
@@ -128,6 +128,7 @@ const CategoryPage = () => {
       >
         {subcategory0}
       </TextFadeReveal>
+      
       <div className="preview-btn-list z-0">
         <button
           key={`preview-btn-${animationKey}`}
