@@ -78,8 +78,8 @@ const MaskMouseEffectDemo = () => {
             hiddenGradientTop="pink"
             hiddenGradientMiddle="#f08597"
             hiddenGradientBottom="pink"
-            mainText="Hover over this text to see the effect"
-            hiddenText="Surprise! Hidden content revealed"
+            mainText = "Hover to discover a new design experience"
+            hiddenText = "✨ Meet VaporUI - A clean, animated, modern UI library by me"            
             expandedMaskSize={250}
           />
         </div>

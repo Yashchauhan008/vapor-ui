@@ -123,7 +123,7 @@ const AppleDockDemo = () => {
   return (
     <>
       <div className="demo-box">
-        <div className="preview-box bg-black p-6 rounded-lg mb-6">
+        <div className="preview-box bg-black p-20 rounded-lg mb-6">
           <AppleDock
             key={renderKey} // Apply the render key for forced updates
             items={items}
