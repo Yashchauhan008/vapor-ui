@@ -41,6 +41,7 @@
     'chandelier': () => import("../constants/Backgrounds/ChandelierCode"),
     'tunnle': () => import("../constants/Backgrounds/TunnleCode.js"),
     'pipe-grid': () => import("../constants/Backgrounds/PipeGridCode.js"),
+    'fire-particles': () => import("../constants/Backgrounds/FireParticlesCode.js"),
     'strip-pattern': () => import("../constants/Backgrounds/StripPatternCode.js")
   }
 

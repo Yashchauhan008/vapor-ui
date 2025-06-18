@@ -16,6 +16,7 @@ function App() {
     <>
       <Router>
       <CustomCursor/>
+
         <Routes>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/showcase' element={<ShowcasePage/>}/>

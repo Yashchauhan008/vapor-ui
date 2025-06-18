@@ -1,5 +1,5 @@
 // Highlighted sidebar items
-export const NEW = ['Kippo Card Swiper','Instagram Carousel','Black Hole','Sparkles Title'];
+export const NEW = ['Fire Particles','Kippo Card Swiper','Instagram Carousel','Black Hole','Sparkles Title'];
 export const UPDATED = ['Social Icons Grid'];
 
 // Used for main sidebar navigation
@@ -28,6 +28,7 @@ export const CATEGORIES = [
       'Chandelier',
       'Tunnle',
       'Pipe Grid',
+      'Fire Particles',
       'Strip Pattern'
     ]
   },

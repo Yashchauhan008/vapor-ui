@@ -7,6 +7,7 @@ import img from "../assets/images/ElasticAcordianEmages/human1.webp";
 import Loading from "../components/Loading";
 import { TextWaveReveal } from "../content/TextAnimation/TextWaveReveal";
 import { TextFadeReveal } from "../content/TextAnimation/TextFadeReveal";
+import FireParticles from "../content/Backgrounds/FireParticles";
 
 // Add CSS for animations
 const fadeInUpKeyframes = `
@@ -103,6 +104,14 @@ const CategoryPage = () => {
   };
 
   return (
+    <>
+            <FireParticles
+    particleCount={100}
+    glowColor={"rgba(6, 217, 255, 0.15)"}
+    particleColor={["#06d9ff","#06d9ff"]}
+    glowSize={600}
+    followCursor={false}
+/>
     <div className="category-page px-8">
       <TextFadeReveal
         key={`category-${animationKey}`}
@@ -250,6 +259,7 @@ const CategoryPage = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

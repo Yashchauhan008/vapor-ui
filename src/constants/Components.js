@@ -39,7 +39,8 @@
     'chandelier': () => import("../Demo/Backgrounds/ChandelierDemo"),
     'tunnle': () => import("../Demo/Backgrounds/TunnelDemo"),
     'pipe-grid': () => import("../Demo/Backgrounds/PipeGridDemo"),
-    'strip-pattern': () => import("../Demo/Backgrounds/StripPatternDemo")
+    'strip-pattern': () => import("../Demo/Backgrounds/StripPatternDemo"),
+    'fire-particles': () => import("../Demo/Backgrounds/FireParticlesDemo")
   }
 
 

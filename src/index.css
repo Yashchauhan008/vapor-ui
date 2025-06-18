@@ -45,6 +45,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   color: white;
+  /* cursor: none !important; */
   cursor: none !important;
 }
 
@@ -559,7 +560,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 10000;
   margin-top: 30px;
 }
 
