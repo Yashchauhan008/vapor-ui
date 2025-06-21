@@ -1,9 +1,12 @@
 import React from "react";
 import logo from "../assets/vaporlogo.svg";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 // import Button2 from "./Button2"; // Make sure to import Button2
 
 const Header = () => {
+
+  const nav = useNavigate();
 
   const handleClick = () => {
     window.location.href = "https://github.com/Yashchauhan008/vapor-ui";
@@ -12,7 +15,7 @@ const Header = () => {
   return (
     <>
       <div className="header pl-4 pr-12 sm:px-10">
-        <div className="logo text-2xl sm:text-3xl">
+        <div onClick={()=>nav("/")} className="logo text-2xl sm:text-3xl">
           <img className="sm:scale-100 scale-75" src={logo} alt="" />
           vapor ui
         </div>

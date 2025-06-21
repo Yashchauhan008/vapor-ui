@@ -106,7 +106,7 @@ const CategoryPage = () => {
   return (
     <>
             <FireParticles
-    particleCount={100}
+    particleCount={20}
     glowColor={"rgba(6, 217, 255, 0.15)"}
     particleColor={["#06d9ff","#06d9ff"]}
     glowSize={600}

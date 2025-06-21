@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AbstractLinesBackground from "../content/temp";
+import QuantumNav from "../content/temp";
 
 const TestDemo = () => {
   const [fullScreen, setFullScreen] = useState(false);
@@ -13,7 +14,7 @@ const TestDemo = () => {
               <h1 className="font-bold text-white text-[60px] backdrop:filter blur-0">Background 1</h1>
             </div>
           </GradientBackground> */}
-        <AbstractLinesBackground/>
+        <QuantumNav/>
         </div>
         <div className="states">
           <h3>Customization</h3>
